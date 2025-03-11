@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caramelos - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i> Carrito (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+        <main>
+            <!-- Sección de Caramelos -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Caramelo 1 -->
+                    <div class="producto">
+                        <img src="img/caramelo-misky-surtido.jpeg" alt="Caramelo Misky Surtido">
+                        <h3>Caramelo Misky Surtido</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="5240">Unidad - $5,240</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Caramelo Misky Surtido">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Caramelo 2 -->
+                            <div class="producto">
+                                <img src="img/caramelo-lipo-acido.jpeg" alt="Caramelo Lipo Ácido">
+                                <h3>Caramelo Lipo Ácido</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4870">Unidad - $4,870</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Lipo Ácido ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                             <!-- Caramelo 3 -->
+                             <div class="producto">
+                                <img src="img/caramelo-lipo-gajitos.jpeg" alt="Caramelo Lipo Gajitos">
+                                <h3>Caramelo Lipo Gajitos</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4870">Unidad - $4,870</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Lipo Gajitos ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 4 -->
+                            <div class="producto">
+                                <img src="img/caramelo-palitos de la selva.jpeg" alt="Caramelo Palitos de la Selva (Caja)">
+                                <h3>Caramelo Palitos de la Selva (Caja)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4510">Unidad - $4,510</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Palitos de la Selva (Caja) ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 5 -->
+                            <div class="producto">
+                                <img src="img/caramelos-flynnpaff.jpeg" alt="Caramelos Flynn Paff">
+                                <h3>Caramelos Flynn Paff</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4200">Unidad - $4,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelos Flynn Paff ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 6 -->
+                            <div class="producto">
+                                <img src="img/caramelo-billiken-yogurt.jpeg" alt="Caramelo Billiken Yogurt">
+                                <h3>Caramelo Billiken Yogurt</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3270">Unidad - $3,270</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Billiken Yogurt ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 7 -->
+                            <div class="producto">
+                                <img src="img/caramelo-billiken-frutal.jpeg" alt="Caramelo Billiken Frutal">
+                                <h3>Caramelo Billiken Frutal</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3270">Unidad - $3,270</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Billiken Frutal ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 8 -->
+                            <div class="producto">
+                                <img src="img/caramelo-billiken-frutilla-durazno.jpeg" alt="Caramelo Billiken Frutilla-Durazno (300g)">
+                                <h3>Caramelo Billiken Frutilla-Durazno (300g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4200">Unidad - $3,270</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Billiken Frutilla-Durazno (300g) ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 9 -->
+                            <div class="producto">
+                                <img src="img/caramelo-taponazo-frutal.jpeg" alt="Caramelo Taponazo Frutal">
+                                <h3>Caramelo Taponazo Frutal</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="1900">Unidad - $1,900</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Taponazo Frutal ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Caramelo 10 -->
+                            <div class="producto">
+                                <img src="img/caramelo-taponazo-yogurt.jpeg" alt="Caramelo Taponazo Yogurt">
+                                <h3>Caramelo Taponazo Yogurt</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="1900">Unidad - $1,900</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Taponazo Yogurt ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 11 -->
+                            <div class="producto">
+                                <img src="img/caramelo-menta-marengo.jpeg" alt="Caramelo Menta Marengo">
+                                <h3>Caramelo Menta Marengo</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3000">Unidad - $3,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Menta Marengo ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 12-->
+                            <div class="producto">
+                                <img src="img/caramelo-cherry-marengo.jpeg" alt="Caramelo Cereza Marengo">
+                                <h3>Caramelo Cereza Marengo</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3000">Unidad - $3,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Cereza Marengo ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 13 -->
+                            <div class="producto">
+                                <img src="img/caramelo-eucaliptus-marengo.jpeg" alt="Caramelo Eucaliptus Marengo">
+                                <h3>Caramelo Eucaliptus Marengo</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3000">Unidad - $3,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Eucaliptus Marengo ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 14 -->
+                            <div class="producto">
+                                <img src="img/caramelo-miel-marengo.jpeg" alt="Caramelo Miel Marengo">
+                                <h3>Caramelo Miel Marengo</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3000">Unidad - $3,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Miel Marengo ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 15 -->
+                            <div class="producto">
+                                <img src="img/caramelo-saquitos-marengo.jpeg" alt="Caramelo Saquitos Frutal Marengo">
+                                <h3>Caramelo Saquitos Frutal Marengo</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3450">Unidad - $3,450</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Saquitos Frutal Marengo ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 16 -->
+                            <div class="producto">
+                                <img src="img/caramelo-palitos de la selva-ácidos-ananá.jpeg" alt="Caramelo Palito de la selva Ananá-Ácido (Caja)">
+                                <h3>Caramelo Palito de la selva Ananá-Ácido (Caja)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4510">Unidad - $4,510</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Palito de la Selva Ananá-Ácido (Caja)">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 17 -->
+                            <div class="producto">
+                                <img src="img/caramelo-palitos de la selva-ácidos-arándano.jpeg" alt="Caramelo Palito de la selva Arándano-Ácido (Caja)">
+                                <h3>Caramelo Palito de la selva Arándano-Ácido (Caja)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4510">Unidad - $4,510</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Palito de la Selva Arándano-Ácido (Caja) ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 18 -->
+                            <div class="producto">
+                                <img src="img/caramelo-palito de la selva-bolsa.jpeg" alt="Caramelo Palitos de la Selva (Bolsa)">
+                                <h3>Caramelo Palitos de la Selva (Bolsa)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="5890">Unidad - $5,890</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelos Palito de la Selva (Bolsa) ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Caramelo 20 -->
+                            <div class="producto">
+                                <img src="img/caramelo-multimint-mentol.jpeg" alt="Caramelo Multimint Mentol">
+                                <h3>Caramelo Multimint Mentol</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="2850">Unidad - $2,850</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Multimint Mentol ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 21 -->
+                            <div class="producto">
+                                <img src="img/caramelo-multimint-cereza.jpeg" alt="Caramelo Multimint Cereza">
+                                <h3>Caramelo Multimint Cereza</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="2850">Unidad - $2,850</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Multimint Cereza ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 22 -->
+                            <div class="producto">
+                                <img src="img/caramelo hipopó- surtidos.jpeg" alt="Caramelo Hipopó Surtidos">
+                                <h3>Caramelo Hipopó Surtidos</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="2950">Unidad - $2,950</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre=" Caramelo Hipopó Surtidos ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 23 -->
+                            <div class="producto">
+                                <img src="img/caramelo masticable-dropsy selva.jpeg" alt="Caramelo Masticable Dropsy Selva">
+                                <h3>Caramelo Masticable Dropsy Selva</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3950">Unidad - $3,950</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable Dropsy Selva ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 24 -->
+                            <div class="producto">
+                                <img src="img/caramelo masticables-dropsy frutal.jpeg" alt="Caramelo Masticable Dropsy Frutal">
+                                <h3>Caramelo Masticable Dropsy Frutal</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3950">Unidad - $3,950</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable Dropsy Frutal ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 25 -->
+                            <div class="producto">
+                                <img src="img/caramelo masticable-yogurt dropsy.jpeg" alt="Caramelo Masticable Dropsy Yogurt">
+                                <h3>Caramelo Masticable Dropsy Yogurt</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3950">Unidad - $3,950</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable Dropsy Yogurt ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 26 -->
+                            <div class="producto">
+                                <img src="img/caramelo masticable- surtidos paysandu 275g.jpeg" alt="Caramelo Masticable Surtido Paysandu (275g)">
+                                <h3>Caramelo Masticable Surtido Paysandu (275g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="1900">Unidad - $1,900</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable Surtido Paysandu ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                             <!-- Caramelo 27 -->
+                             <div class="producto">
+                                <img src="img/caramelo masticable-yogurt paysandu.jpeg" alt="Caramelo Masticable Paysandu Yogurt">
+                                <h3>Caramelo Masticable Paysandu Yogurt</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="1900">Unidad - $1,900</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable Paysandu Yogurt ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div> 
+                            <!-- Caramelo 28 -->
+                            <div class="producto">
+                                <img src="img/caramelo masticable-paysandu (415g).jpeg" alt="Caramelo Masticable Surtido Paysandu (415g)">
+                                <h3>Caramelo Masticable Surtido Paysandu (415g)</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="2100">Unidad - $2,100</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable Surtido Paysandu (415g) ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                                <!-- Caramelo 29 -->
+                            <div class="producto">
+                                <img src="img/caramelo masticable-bulldog.jpeg" alt="Caramelo Masticable BullDog Ácidos">
+                                <h3>Caramelo Masticable BullDog Ácidos</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="3950">Unidad - $3,950</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Masticable BullDog Ácidos ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Caramelo 30 -->
+                            <div class="producto">
+                                <img src="img/caramelo billiken-cremoso.jpeg" alt="Caramelo Billiken Cremoso">
+                                <h3>Caramelo Billiken Cremoso</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4730">Unidad - $4,730</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Billiken Cremoso ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Caramelo 31 -->
+                            <div class="producto">
+                                <img src="img/caramelo-misky-menta.jpeg" alt="Caramelo Misky Menta">
+                                <h3>Caramelo Misky Menta</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="4730">Unidad - $4,730</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Caramelo Misky Menta ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+
+                </section>
+             </main>
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

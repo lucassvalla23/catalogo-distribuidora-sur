@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i> Carrito (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto">
+            <h2>Contacto</h2>
+            <p>¿Necesitas ayuda o tienes alguna pregunta? ¡Contáctame!</p>
+
+            <div class="info-contacto">
+                <!-- Correo electrónico -->
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-texto">
+                        <h3>Correo Electrónico</h3>
+                        <p>distrisuralcorta@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="info-texto">
+                        <h3>Teléfono</h3>
+                        <p>+54 9 3465 65-8349</p>
+                    </div>
+                </div>
+
+                <!-- Dirección -->
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-texto">
+                        <h3>Dirección</h3>
+                        <p>Saenz Peña 330, Alcorta Santa Fe</p>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="info-item">
+                    <i class="fas fa-share-alt"></i>
+                    <div class="info-texto">
+                        <h3>Redes Sociales</h3>
+                        <div class="redes-sociales">
+                            <a href="https://www.facebook.com/share/16AYYNEkgU/" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/distribuidorasuralcorta/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

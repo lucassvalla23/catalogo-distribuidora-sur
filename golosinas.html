@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golosinas - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i> Carrito (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Filtros de categorías -->
+        <section class="filtros">
+            <h2>Explora Nuestras Categorías de Golosinas</h2>
+            <div class="botones-filtro">
+                <!-- Alfajores -->
+                <a href="alfajores.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/alfajores.png" alt="Alfajor">
+                    </div>
+                    <span>Alfajores</span>
+                </a>
+
+                <!-- Caramelos -->
+                <a href="caramelos.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/caramelos.png" alt="Caramelo">
+                    </div>
+                    <span>Caramelos</span>
+                </a>
+
+                <!-- Chupetines Y Paletas -->
+                <a href="chupetinesypaletas.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/palteas.png" alt="Chupetínes/Paletas">
+                    </div>
+                    <span>Chupetines / Paletas</span>
+                </a>
+
+                <!-- Chicles -->
+                <a href="chicles.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/chciles.png" alt="Chicle">
+                    </div>
+                    <span>Chicles</span>
+                </a>
+
+                <!-- Gomitas -->
+                <a href="gomitas.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/gomitas.png   " alt="Gomitas">
+                    </div>
+                    <span>Gomitas</span>
+                </a>
+
+                <!-- Cubanitos de Oblea -->
+                <a href="cubanitos.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/cubanitos.png" alt="Cubanitos">
+                    </div>
+                    <span>Cubanitos</span>
+                </a>
+
+                <!-- Confites -->
+                <a href="confites.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/confites.png" alt="Confites">
+                    </div>
+                    <span>Confites</span>
+                </a>
+
+                <!-- Chocolates -->
+                <a href="chocolates.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/chocolates.png" alt="Chocolate">
+                    </div>
+                    <span>Chocolates</span>
+                </a>
+
+                <!-- Girasoles -->
+                <a href="girasoles.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/girasoles.png" alt="Girasoles">
+                    </div>
+                    <span>Girasoles</span>
+                </a>
+                 <!-- Importados -->
+                 <a href="importados.html" class="boton-filtro">
+                    <div class="icono-categoria">
+                        <img src="img/Importados.png" alt="Importados">
+                    </div>
+                    <span>Importados</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
