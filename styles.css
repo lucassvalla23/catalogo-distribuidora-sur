@@ -1131,3 +1131,33 @@ header {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+/* Efecto hover para las categorías */
+.categoria {
+    background-color: #fff; /* Fondo blanco */
+    color: #eb1c24; /* Color del texto */
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover */
+.categoria:hover {
+    background-color: #f4ec27; /* Fondo rojo al hacer hover */
+    color: #ed1b24; /* Texto blanco al hacer hover */
+    transform: translateY(-10px); /* Elevación */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Efecto hover en la imagen de la categoría */
+.categoria:hover .imagen-categoria img {
+    transform: scale(1.1); /* Escala la imagen al hacer hover */
+}
+
+/* Efecto hover en el texto de la categoría */
+.categoria:hover span {
+    color: #ed1b24; /* Cambia el color del texto a blanco */
+}

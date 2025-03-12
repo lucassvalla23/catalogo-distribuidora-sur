@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caramelos - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i> Carrito (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+        <main>
+            <!-- Sección de Turrones  -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Turron 1 -->
+                    <div class="producto">
+                        <img src="img/turron de maní misky.jpeg" alt="Turron Misky">
+                        <h3>Turron Misky</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="180">Unidad - $180</option>
+                                <option value="caja" data-precio="9000">Caja (50 Unidades) - $9,000</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Turron Misky">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Turron 2 -->
+                            <div class="producto">
+                                <img src="img/turron nevares.jpeg" alt="Turron Nevares">
+                                <h3>Turron Nevares</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="160">Unidad - $160</option>
+                                        <option value="caja" data-precio="8000">Caja (50 Unidades) - $8,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Turron Nevares ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                             <!-- Turron 3 -->
+                             <div class="producto">
+                                <img src="img/turron la piñata.jpeg" alt="Turron La Piñata">
+                                <h3>Turron La Piñata</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                        <option value="unidad" data-precio="248">Unidad - $248</option>
+                                        <option value="caja" data-precio="6200">Caja (25 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Turron La Piñata ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                </section>
+             </main>
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

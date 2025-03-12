@@ -40,9 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const productoDiv = boton.closest(".producto");
             const nombre = boton.getAttribute("data-nombre");
 
-            // Obtener el tipo seleccionado (negro o blanco)
-            const tipoAlfajor = productoDiv.querySelector(".opcion-tipo").value;
-
             // Obtener la opción de compra (unidad o caja) y su precio
             const opcionCompra = productoDiv.querySelector(".opcion-compra");
             const tipoCompra = opcionCompra.value; // "unidad" o "caja"
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // Crear el objeto del producto
             const producto = {
                 nombre,
-                tipoAlfajor, // Agregamos el tipo de alfajor (negro o blanco)
                 tipoCompra,  // Agregamos el tipo de compra (unidad o caja)
                 precio,
             };
@@ -68,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botonVaciar.addEventListener("click", () => {
         carrito.length = 0;
         actualizarCarrito();
+        
     });
 
     // Actualizar carrito
@@ -79,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const li = document.createElement("li");
 
             // Mostrar los detalles del producto en el carrito
-            li.textContent = `${producto.nombre} (${producto.tipoAlfajor}, ${producto.tipoCompra}) - $${producto.precio}`;
+            li.textContent = `${producto.nombre} (${producto.tipoCompra}) - $${producto.precio}`;
 
             // Botón para eliminar producto del carrito
             const botonEliminar = document.createElement("button");
