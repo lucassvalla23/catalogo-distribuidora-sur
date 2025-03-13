@@ -1146,7 +1146,7 @@ header {
 
 /* Efecto hover */
 .categoria:hover {
-    background-color: #f4ec27; /* Fondo rojo al hacer hover */
+    background-color: #FFD700; /* Fondo rojo al hacer hover */
     color: #ed1b24; /* Texto blanco al hacer hover */
     transform: translateY(-10px); /* Elevación */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
@@ -1160,4 +1160,123 @@ header {
 /* Efecto hover en el texto de la categoría */
 .categoria:hover span {
     color: #ed1b24; /* Cambia el color del texto a blanco */
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Mantiene los elementos en una fila */
+        justify-content: space-between; /* Distribuye el espacio entre los elementos */
+        align-items: center; /* Centra verticalmente los elementos */
+        padding: 10px 15px; /* Reduce el padding para móviles */
+    }
+
+    .logo-container {
+        margin: 0; /* Elimina el margen inferior */
+    }
+
+    .nav-principal, .nav-carrito {
+        display: flex;
+        gap: 10px; /* Espacio entre los botones */
+        align-items: center; /* Centra verticalmente los botones */
+    }
+
+    .nav-principal a, .nav-carrito a {
+        font-size: 0.9em; /* Reduce el tamaño de la fuente para móviles */
+        padding: 8px 12px; /* Añade padding para que los botones sean más táctiles */
+        background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil para los botones */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .nav-principal a:hover, .nav-carrito a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Efecto hover sutil */
+    }
+}
+
+/* Estilos para el buscador */
+.buscador {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+#buscador-input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+    max-width: 400px;
+    outline: none;
+}
+
+#boton-buscar {
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #eb1c24;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#boton-buscar:hover {
+    background-color: #c82333;
+}
+
+#boton-buscar i {
+    margin-right: 5px;
+}
+/* Efecto hover para las casillas de contacto */
+.info-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: #FFD700; /* Cambia el color de fondo al hacer hover */
+    transform: translateY(-5px); /* Eleva la casilla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+.info-item:hover i,
+.info-item:hover h3,
+.info-item:hover p {
+    color: #eb1c24; /* Cambia el color del texto a blanco al hacer hover */
+}
+
+.info-item i {
+    font-size: 2em;
+    color: #eb1c24;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.info-item h3 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.info-item p {
+    color: #666;
+    margin: 0;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a {
+    color: #eb1c24;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #fff; /* Cambia el color de los íconos de redes sociales al hacer hover */
 }
