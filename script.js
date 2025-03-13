@@ -8,6 +8,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const divCarrito = document.getElementById("carrito");
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
+    
+// Función para filtrar productos por nombre
+function filtrarProductos() {
+    const input = document.getElementById("buscador-input").value.toLowerCase(); // Texto del buscador
+    const productos = document.querySelectorAll(".producto"); // Todos los productos
+
+    productos.forEach((producto) => {
+        const nombre = producto.querySelector("h3").textContent.toLowerCase(); // Nombre del producto
+        if (nombre.includes(input)) {
+            producto.style.display = "block"; // Muestra el producto si coincide
+        } else {
+            producto.style.display = "none"; // Oculta el producto si no coincide
+        }
+    });
+}
+
+// Evento para el botón de búsqueda
+document.getElementById("boton-buscar").addEventListener("click", filtrarProductos);
+
+// Evento para buscar mientras se escribe (opcional)
+document.getElementById("buscador-input").addEventListener("input", filtrarProductos);
     // Mostrar carrito
     botonVerCarrito.addEventListener("click", (e) => {
         e.preventDefault();
