@@ -120,8 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     function toggleMenu() {
-        const nav = document.querySelector('.nav-principal');
-        nav.classList.toggle('mostrar');
+        const nav = document.getElementById('nav-principal');
+        nav.classList.toggle('mostrar'); // Agrega o quita la clase "mostrar"
     }
 
 
