@@ -8,27 +8,59 @@ document.addEventListener("DOMContentLoaded", () => {
     const divCarrito = document.getElementById("carrito");
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
-    
-// Función para filtrar productos por nombre
-function filtrarProductos() {
-    const input = document.getElementById("buscador-input").value.toLowerCase(); // Texto del buscador
-    const productos = document.querySelectorAll(".producto"); // Todos los productos
+    // Función para filtrar productos por nombre
+    function filtrarProductos() {
+        const input = document.getElementById("buscador-input").value.toLowerCase(); // Texto del buscador
+        const productos = document.querySelectorAll(".producto"); // Todos los productos
 
-    productos.forEach((producto) => {
-        const nombre = producto.querySelector("h3").textContent.toLowerCase(); // Nombre del producto
-        if (nombre.includes(input)) {
-            producto.style.display = "block"; // Muestra el producto si coincide
-        } else {
-            producto.style.display = "none"; // Oculta el producto si no coincide
-        }
-    });
-}
+        productos.forEach((producto) => {
+            const nombre = producto.querySelector("h3").textContent.toLowerCase(); // Nombre del producto
+            if (nombre.includes(input)) {
+                producto.style.display = "block"; // Muestra el producto si coincide
+            } else {
+                producto.style.display = "none"; // Oculta el producto si no coincide
+            }
+        });
+    }
 
-// Evento para el botón de búsqueda
-document.getElementById("boton-buscar").addEventListener("click", filtrarProductos);
+    // Evento para el botón de búsqueda
+    document.getElementById("boton-buscar").addEventListener("click", filtrarProductos);
 
-// Evento para buscar mientras se escribe (opcional)
-document.getElementById("buscador-input").addEventListener("input", filtrarProductos);
+    // Evento para buscar mientras se escribe (opcional)
+    document.getElementById("buscador-input").addEventListener("input", filtrarProductos);
+
+    // Función para filtrar por "Gomita"
+    function filtrarPorGomita() {
+        const productos = document.querySelectorAll(".producto");
+        productos.forEach((producto) => {
+            const nombre = producto.querySelector("h3").textContent.toLowerCase();
+            if (nombre.startsWith("gomita")) {
+                producto.style.display = "block";
+            } else {
+                producto.style.display = "none";
+            }
+        });
+    }
+
+    // Función para filtrar por "Regaliz"
+    function filtrarPorRegaliz() {
+        const productos = document.querySelectorAll(".producto");
+        productos.forEach((producto) => {
+            const nombre = producto.querySelector("h3").textContent.toLowerCase();
+            if (nombre.startsWith("regaliz")) {
+                producto.style.display = "block";
+            } else {
+                producto.style.display = "none";
+            }
+        });
+    }
+
+    // Evento para el botón de filtrar por "Gomita"
+    document.getElementById("filtro-gomita").addEventListener("click", filtrarPorGomita);
+
+    // Evento para el botón de filtrar por "Regaliz"
+    document.getElementById("filtro-regaliz").addEventListener("click", filtrarPorRegaliz);
+
     // Mostrar carrito
     botonVerCarrito.addEventListener("click", (e) => {
         e.preventDefault();
@@ -85,8 +117,13 @@ document.getElementById("buscador-input").addEventListener("input", filtrarProdu
     botonVaciar.addEventListener("click", () => {
         carrito.length = 0;
         actualizarCarrito();
-        
     });
+    
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-principal');
+        nav.classList.toggle('mostrar');
+    }
+
 
     // Actualizar carrito
     function actualizarCarrito() {
