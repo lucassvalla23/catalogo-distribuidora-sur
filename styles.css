@@ -1423,28 +1423,6 @@ img {
         flex-direction: column;
     }
 }
-
-/* Estilo para el menú de navegación */
-.nav-principal {
-    display: flex;
-    gap: 20px; /* Espacio entre los enlaces */
-}
-
-/* Estilo para el botón de menú hamburguesa */
-.menu-hamburguesa {
-    display: none; /* Oculta el botón en pantallas grandes */
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
-
-/* Estilo para el menú de navegación */
-.nav-principal {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
 /* Estilos para móviles */
 @media (max-width: 768px) {
     .menu-hamburguesa {
