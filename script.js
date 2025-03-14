@@ -122,13 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
     function toggleMenu() {
         const nav = document.getElementById('nav-principal');
         nav.classList.toggle('mostrar'); // Agrega o quita la clase "mostrar"
-        document.querySelectorAll('.nav-principal a').forEach(link => {
-            link.addEventListener('click', () => {
-                const nav = document.getElementById('nav-principal');
-                nav.classList.remove('mostrar'); // Oculta el menú al hacer clic en un enlace
-            });
-        });
+        
     }
+    // Agregar evento de clic a los enlaces del menú para cerrarlo
+document.querySelectorAll('.nav-principal a').forEach(link => {
+    link.addEventListener('click', () => {
+        const nav = document.getElementById('nav-principal');
+        nav.classList.remove('mostrar'); // Oculta el menú al hacer clic en un enlace
+    });
+});
 
 
     // Actualizar carrito
