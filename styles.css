@@ -1423,3 +1423,39 @@ img {
         flex-direction: column;
     }
 }
+/* Estilo para el botón de menú hamburguesa */
+.menu-hamburguesa {
+    display: none; /* Oculta el botón en pantallas grandes */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Estilo para el menú de navegación */
+.nav-principal {
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .menu-hamburguesa {
+        display: block; /* Muestra el botón en móviles */
+    }
+
+    .nav-principal {
+        display: none; /* Oculta el menú en móviles por defecto */
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        position: absolute;
+        top: 60px; /* Ajusta según la altura de tu header */
+        left: 0;
+        background-color: #f8f8f8; /* Fondo del menú */
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+    }
+
+    .nav-principal.mostrar {
+        display: flex; /* Muestra el menú cuando tiene la clase "mostrar" */
+    }
+}
