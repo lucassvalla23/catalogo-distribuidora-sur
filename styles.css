@@ -1439,23 +1439,37 @@ img {
 
 /* Estilos para móviles */
 @media (max-width: 768px) {
-    .menu-hamburguesa {
-        display: block; /* Muestra el botón en móviles */
-    }
-
-    .nav-principal {
-        display: none; /* Oculta el menú en móviles por defecto */
-        flex-direction: column; /* Apila los enlaces verticalmente */
-        position: absolute;
-        top: 60px; /* Ajusta según la altura de tu header */
-        left: 0;
-        background-color: #f8f8f8; /* Fondo del menú */
-        width: 100%; /* Ocupa todo el ancho */
-        padding: 10px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
-    }
-
-    .nav-principal.mostrar {
-        display: flex; /* Muestra el menú cuando tiene la clase "mostrar" */
-    }
 }
+    .menu-hamburguesa {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    .nav-principal {
+        display: flex;
+        gap: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .menu-hamburguesa {
+            display: block;
+        }
+    
+        .nav-principal {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #f8f8f8;
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .nav-principal.mostrar {
+            display: flex;
+        }
+    }
