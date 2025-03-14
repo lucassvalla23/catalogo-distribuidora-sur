@@ -118,20 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
         carrito.length = 0;
         actualizarCarrito();
     });
-    
+
+    // Función para alternar el menú
     function toggleMenu() {
         const nav = document.getElementById('nav-principal');
         nav.classList.toggle('mostrar'); // Agrega o quita la clase "mostrar"
-        
     }
-    // Agregar evento de clic a los enlaces del menú para cerrarlo
-document.querySelectorAll('.nav-principal a').forEach(link => {
-    link.addEventListener('click', () => {
-        const nav = document.getElementById('nav-principal');
-        nav.classList.remove('mostrar'); // Oculta el menú al hacer clic en un enlace
-    });
-});
 
+    // Agregar evento de clic a los enlaces del menú para cerrarlo
+    document.querySelectorAll('.nav-principal a').forEach(link => {
+        link.addEventListener('click', () => {
+            const nav = document.getElementById('nav-principal');
+            nav.classList.remove('mostrar'); // Oculta el menú al hacer clic en un enlace
+        });
+    });
 
     // Actualizar carrito
     function actualizarCarrito() {
