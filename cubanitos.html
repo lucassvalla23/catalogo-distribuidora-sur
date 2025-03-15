@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caramelos - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i> Carrito (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+     <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+
+        <main>
+            <!-- Sección de Cubanitos  -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Cubanito 1 -->
+                    <div class="producto">
+                        <img src="img/cubanito oblita chocolate.jpeg" alt="Cubanito Oblita Chocolate">
+                        <h3>Cubanito Oblita Chocolate</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="caja" data-precio="9000">Caja (46 Unidades) - $9,000</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Cubanito Oblita Chocolate">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    <!-- Cubanito 2 -->
+                            <div class="producto">
+                                <img src="img/cubanito oblita dulcee de leche.jpeg" alt="Cubanito Oblita Dulce De Leche">
+                                <h3>Cubanito Oblita Dulce De Leche</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="8000">Caja (46 Unidades) - $8,000</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Oblita Dulce De Leche ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                             <!-- Cubanito 3 -->
+                             <div class="producto">
+                                <img src="img/cubanito oblita chocolate blanco.jpeg" alt="Cubanito Oblita Chocolate Blanco">
+                                <h3>Cubanito Oblita Chocolate Blanco</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (46 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Oblita Chocolate Blanco ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 4 -->
+                            <div class="producto">
+                                <img src="img/cubanito oblita marroc.jpeg" alt="Cubanito Oblita Marroc">
+                                <h3>Cubanito Oblita Marroc</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (46 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Oblita Marroc ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 5 -->
+                            <div class="producto">
+                                <img src="img/cubanito nougat oblita.jpeg" alt="Cubanito Oblita Nougat">
+                                <h3>Cubanito Oblita Nougat</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (46 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Oblita Nougat ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 6 -->
+                            <div class="producto">
+                                <img src="img/cubanito oblita frutilla.jpeg" alt="Cubanito Oblita Frutilla">
+                                <h3>Cubanito Oblita Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (46 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Oblita Frutilla ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 7 -->
+                            <div class="producto">
+                                <img src="img/cubanito dolce rolly chocolate.jpeg" alt="Cubanito Dolce Rolly Chocolate">
+                                <h3>Cubanito Dolce Rolly Chocolate</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (50 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Dolce Rolly Chocolate ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 8 -->
+                            <div class="producto">
+                                <img src="img/cubanito oblita dulcee de leche.jpeg" alt="Cubanito Dolce Rolly Dulce De Leche">
+                                <h3>Cubanito Dolce Rolly Dulce De Leche</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (50 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Dolce Rolly Dulce De Leche ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 9 -->
+                            <div class="producto">
+                                <img src="img/cubanito dolce rolly chocolate blanco.jpeg" alt="Cubanito Dolce Rolly Chocolate Blanco">
+                                <h3>Cubanito Dolce Rolly Chocolate Blanco</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (50 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Dolce Rolly Chocolate Blanco ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                            <!-- Cubanito 10 -->
+                            <div class="producto">
+                                <img src="img/cubanito dolce rolly frutilla.jpeg" alt="Cubanito Dolce Rolly Frutilla">
+                                <h3>Cubanito Dolce Rolly Frutilla</h3>
+                                <div class="opciones-compra">
+                                    <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->                           
+                                        <option value="caja" data-precio="6200">Caja (50 Unidades) - $6,200</option>
+                                    </select>
+                                    <button class="agregar-carrito" data-nombre="Cubanito Dolce Rolly Frutilla ">
+                                        <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                        <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>  
+                </section>
+             </main>
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
