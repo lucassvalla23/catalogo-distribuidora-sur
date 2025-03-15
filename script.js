@@ -8,38 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const divCarrito = document.getElementById("carrito");
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
-    // ===== Funcionalidad de búsqueda y filtrado =====
-    // Función para filtrar productos por nombre
-    function filtrarProductos() {
-        const input = document.getElementById("buscador-input").value.toLowerCase(); // Texto del buscador
-        const productos = document.querySelectorAll(".producto"); // Todos los productos
-
-        productos.forEach((producto) => {
-            const nombre = producto.querySelector("h3").textContent.toLowerCase(); // Nombre del producto
-            if (nombre.includes(input)) {
-                producto.style.display = "block"; // Muestra el producto si coincide
-            } else {
-                producto.style.display = "none"; // Oculta el producto si no coincide
-            }
-        });
-    }
-
-    // Evento para el botón de búsqueda
-    document.getElementById("boton-buscar").addEventListener("click", filtrarProductos);
-
-    // Evento para buscar mientras se escribe (opcional)
-    document.getElementById("buscador-input").addEventListener("input", filtrarProductos);
-
     // ===== Funcionalidad del carrito =====
     // Mostrar carrito
     botonVerCarrito.addEventListener("click", (e) => {
         e.preventDefault();
-        divCarrito.classList.toggle("oculto"); // Alternar la visibilidad del carrito
+        divCarrito.classList.toggle("mostrar"); // Alternar la clase "mostrar"
     });
 
     // Cerrar carrito
     botonCerrarCarrito.addEventListener("click", () => {
-        divCarrito.classList.add("oculto");
+        divCarrito.classList.remove("mostrar"); // Quitar la clase "mostrar"
     });
 
     // Agregar productos al carrito

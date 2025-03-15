@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #FFD700;
     color: #333;
     line-height: 1.6;
 }
@@ -111,7 +111,7 @@ header {
 }
 
 .categorias h2 {
-    color: #333;
+    color: #FFD700;
     margin-bottom: 30px;
     font-size: 1.8em;
 }
@@ -124,8 +124,8 @@ header {
 }
 
 .categoria {
-    background-color: #fff;
-    color: #eb1c24;
+    background-color: #eb1c24;                               
+    color: #FFD700;
     text-decoration: none;
     padding: 20px;
     border-radius: 10px;
@@ -222,7 +222,7 @@ header {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #eb1c24;
     color: #fff;
     margin-top: 40px;
 }
@@ -315,8 +315,8 @@ footer {
 }
 
 .boton-filtro {
-    background-color: #fff;
-    color: #eb1c24;
+    background-color: #eb1c24;
+    color: #FFD700;
     text-decoration: none;
     padding: 20px;
     border-radius: 10px;
@@ -412,7 +412,7 @@ footer {
 }
 
 .producto {
-    background-color: #fff;
+    background-color: #eb1c24;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -435,7 +435,7 @@ footer {
 
 .producto h3 {
     font-size: 1.2em;
-    color: #333;
+    color: #FFD700;
     margin-bottom: 15px;
 }
 
@@ -454,7 +454,7 @@ footer {
 
 .selector-tipo label {
     font-size: 0.9em;
-    color: #555;
+    color: #FFD700;
 }
 
 .selector-tipo select {
@@ -472,7 +472,7 @@ footer {
 }
 
 .agregar-carrito {
-    background-color: #eb1c24;
+    background-color: #00a24e;
     color: #fff;
     border: none;
     padding: 10px;
@@ -487,7 +487,7 @@ footer {
 }
 
 .agregar-carrito:hover {
-    background-color: #c82333;
+    background-color: #00a24e 
 }
 
 .agregar-carrito:disabled {
@@ -531,7 +531,7 @@ footer {
 .contacto {
     text-align: center;
     padding: 40px 20px;
-    background-color: #fff;
+    background-color: #FFD700;
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -558,7 +558,7 @@ footer {
 }
 
 .info-item {
-    background-color: #f9f9f9;
+    background-color: #eb1c24;
     border-radius: 10px;
     padding: 20px;
     width: 250px;
@@ -574,19 +574,19 @@ footer {
 
 .info-item i {
     font-size: 2em;
-    color: #eb1c24;
+    color: #FFD700;
     margin-bottom: 15px;
 }
 
 .info-texto h3 {
     font-size: 1.2em;
-    color: #333;
+    color: #FFD700;
     margin-bottom: 10px;
 }
 
 .info-texto p {
     font-size: 1em;
-    color: #555;
+    color: #FFD700;
     margin-bottom: 15px;
 }
 
@@ -598,13 +598,13 @@ footer {
 }
 
 .redes-sociales a {
-    color: #eb1c24;
+    color: #FFD700;
     font-size: 1.2em; /* Ajusté el tamaño de los íconos */
     transition: color 0.3s ease;
 }
 
 .redes-sociales a:hover {
-    color: #c82333;
+    color: #FFD700;
 }
 
 /* Media Queries para responsividad */
@@ -652,4 +652,170 @@ footer {
 
 .agregar-carrito .fa-check {
     display: none; /* Oculta el ícono de checkmark por defecto */
+    /* Estilo para ocultar el carrito */
+.carrito.oculto {
+    display: none;
 }
+
+/* Estilo para mostrar el carrito */
+.carrito {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.carrito.mostrar {
+    transform: translateX(0);
+}
+}
+/* Estilo para el botón de eliminar */
+.eliminar-producto {
+    background-color: #eb1c24; /* Color rojo */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.eliminar-producto:hover {
+    background-color: #eb1c24; /* Color rojo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.eliminar-producto:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+.eliminar-producto i {
+    font-size: 1em; /* Tamaño del ícono */
+}
+/* ===== Animaciones para los íconos ===== */
+
+/* Ícono de contacto (sobre) */
+.fa-envelope:hover {
+    animation: bounce 0.5s ease infinite; /* Rebote */
+    color: #FFD700; /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono del carrito (sobre) */
+.fa-shopping-cart:hover {
+    animation: spin 1s linear infinite; /* Rotación */
+    color: #FFD700; /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono de WhatsApp (sobre) */
+.fa-whatsapp:hover {
+    animation: pulse 1s ease infinite; /* Pulso */
+    color: #25D366; /* Cambio de color al pasar el mouse */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Efecto adicional para los íconos de categorías */
+.imagen-categoria img:hover {
+    animation: float 2s ease-in-out infinite; /* Flotar */
+}
+
+/* Animación de flotar */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* ===== Animaciones para las imágenes ===== */
+
+/* Efecto de escalado al pasar el mouse */
+.icono-categoria img:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de rotación al pasar el mouse */
+.icono-categoria img.rotar:hover {
+    animation: rotate 1s linear infinite; /* Rotación continua */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efecto de flotar al pasar el mouse */
+.icono-categoria img.flotar:hover {
+    animation: float 2s ease-in-out infinite; /* Flotar suavemente */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Efecto de cambio de color (filtro sepia) al pasar el mouse */
+.icono-categoria img.sepia:hover {
+    filter: sepia(100%); /* Aplica un filtro sepia */
+    transition: filter 0.3s ease; /* Transición suave */
+}
+
+/* Efecto de borde y sombra al pasar el mouse */
+.icono-categoria img.borde-sombra:hover {
+    border: 3px solid #FFD700; /* Borde dorado */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Sombra dorada */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+
