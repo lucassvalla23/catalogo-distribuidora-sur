@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const divCarrito = document.getElementById("carrito");
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
+    // ===== Funcionalidad de búsqueda y filtrado =====
     // Función para filtrar productos por nombre
     function filtrarProductos() {
         const input = document.getElementById("buscador-input").value.toLowerCase(); // Texto del buscador
@@ -29,42 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Evento para buscar mientras se escribe (opcional)
     document.getElementById("buscador-input").addEventListener("input", filtrarProductos);
 
-    // Función para filtrar por "Gomita"
-    function filtrarPorGomita() {
-        const productos = document.querySelectorAll(".producto");
-        productos.forEach((producto) => {
-            const nombre = producto.querySelector("h3").textContent.toLowerCase();
-            if (nombre.startsWith("gomita")) {
-                producto.style.display = "block";
-            } else {
-                producto.style.display = "none";
-            }
-        });
-    }
-
-    // Función para filtrar por "Regaliz"
-    function filtrarPorRegaliz() {
-        const productos = document.querySelectorAll(".producto");
-        productos.forEach((producto) => {
-            const nombre = producto.querySelector("h3").textContent.toLowerCase();
-            if (nombre.startsWith("regaliz")) {
-                producto.style.display = "block";
-            } else {
-                producto.style.display = "none";
-            }
-        });
-    }
-
-    // Evento para el botón de filtrar por "Gomita"
-    document.getElementById("filtro-gomita").addEventListener("click", filtrarPorGomita);
-
-    // Evento para el botón de filtrar por "Regaliz"
-    document.getElementById("filtro-regaliz").addEventListener("click", filtrarPorRegaliz);
-
+    // ===== Funcionalidad del carrito =====
     // Mostrar carrito
     botonVerCarrito.addEventListener("click", (e) => {
         e.preventDefault();
-        divCarrito.classList.remove("oculto");
+        divCarrito.classList.toggle("oculto"); // Alternar la visibilidad del carrito
     });
 
     // Cerrar carrito
@@ -91,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Obtener los datos del producto
             const productoDiv = boton.closest(".producto");
-            const nombre = boton.getAttribute("data-nombre");
+            const nombre = boton.getAttribute("data-nombre"); // Nombre del producto
 
             // Obtener la opción de compra (unidad o caja) y su precio
             const opcionCompra = productoDiv.querySelector(".opcion-compra");
@@ -119,21 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         actualizarCarrito();
     });
 
-    // Función para alternar el menú
-    function toggleMenu() {
-        const nav = document.getElementById('nav-principal');
-        nav.classList.toggle('mostrar'); // Agrega o quita la clase "mostrar"
-    }
-
-    // Agregar evento de clic a los enlaces del menú para cerrarlo
-    document.querySelectorAll('.nav-principal a').forEach(link => {
-        link.addEventListener('click', () => {
-            const nav = document.getElementById('nav-principal');
-            nav.classList.remove('mostrar'); // Oculta el menú al hacer clic en un enlace
-        });
-    });
-
-    // Actualizar carrito
+    // Función para actualizar el carrito
     function actualizarCarrito() {
         listaCarrito.innerHTML = "";
         let total = 0;
