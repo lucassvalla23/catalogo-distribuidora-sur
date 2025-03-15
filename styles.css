@@ -811,7 +811,7 @@ footer {
     }
 
     .buscador button {
-        width: 100%; /* Ocupa todo el ancho disponible */
+        width: 20%; /* Ocupa todo el ancho disponible */
         margin-left: 0; /* Restablece el margen en móviles */
     }
 }
