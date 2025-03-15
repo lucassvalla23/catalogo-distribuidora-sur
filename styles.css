@@ -456,29 +456,6 @@ footer {
     font-size: 1.2em;
 }
 
-/* Media Queries para responsividad */
-@media (max-width: 768px) {
-    .buscador input[type="text"] {
-        width: 60%;
-    }
-
-    .producto {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .buscador input[type="text"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-
-    .producto {
-        width: 100%;
-    }
-}
 /* ===== Estilos para la página de Contacto ===== */
 
 /* Sección de contacto */
