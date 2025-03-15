@@ -787,7 +787,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-left: -10px; /* Ajusta la posición del botón */
 }
 
 .buscador button:hover {
@@ -811,8 +810,7 @@ footer {
     }
 
     .buscador button {
-        width: 20%; /* Ocupa todo el ancho disponible */
-        margin-left: 0; /* Restablece el margen en móviles */
+        width: 15%; /* Ocupa todo el ancho disponible */
     }
 }
 
