@@ -810,7 +810,7 @@ footer {
     }
 
     .buscador button {
-        width: 10%; /* Ocupa todo el ancho disponible */
+        width: 5%; /* Ocupa todo el ancho disponible */
     }
 }
 
@@ -889,5 +889,55 @@ footer {
     font-size: 1.2em;
     color: #fff;
 }
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+    padding: 10px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
 
+#buscador-input {
+    flex: 1; /* El input ocupa el espacio restante */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#boton-buscar {
+    padding: 10px;
+    background-color: #eb1c24;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#boton-buscar i {
+    font-size: 16px;
+}
+.filtros {
+    padding: 10px;
+}
+
+.botones-filtro {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: center; /* Centrar los botones */
+}
+
+.botones-filtro button {
+    padding: 10px 20px;
+    background-color: #eb1c24;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botones-filtro button:hover {
+    background-color: #eb1c24;
+}
 
