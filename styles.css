@@ -806,11 +806,11 @@ footer {
     }
 
     .buscador input[type="text"] {
-        width: 100%; /* Ocupa todo el ancho disponible */
+        width: 85%; /* Ocupa todo el ancho disponible */
     }
 
     .buscador button {
-        width: 15%; /* Ocupa todo el ancho disponible */
+        width: 10%; /* Ocupa todo el ancho disponible */
     }
 }
 
