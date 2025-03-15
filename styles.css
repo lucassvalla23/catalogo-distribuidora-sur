@@ -1,11 +1,18 @@
 /* ===== Estilos Generales ===== */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFD700;
+    background-color: #FFD700; /* Color amarillo */
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+}
+
+main {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
 }
 
 img {
@@ -222,10 +229,13 @@ header {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #eb1c24;
-    color: #fff;
-    margin-top: 40px;
+    background-color: #eb1c24; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    margin-top: 0;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
+
 
 /* ===== Botón flotante de WhatsApp ===== */
 .whatsapp-button {
@@ -807,4 +817,3 @@ footer {
     transform: translateY(0); /* Efecto de clic */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
