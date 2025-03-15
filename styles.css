@@ -781,14 +781,16 @@ footer {
     margin: 20px auto; /* Centra el buscador horizontalmente */
     padding: 0 20px;
     max-width: 500px; /* Limita el ancho máximo del buscador */
-    position: relative; /* Para posicionar la lupa */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
 }
 
 .buscador input[type="text"] {
     width: 100%;
-    padding: 10px 40px 10px 10px; /* Espacio para la lupa a la derecha */
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 25px; /* Bordes redondeados */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
     font-size: 1em;
     transition: border-color 0.3s ease;
     box-sizing: border-box; /* Incluye el padding en el ancho */
@@ -800,36 +802,51 @@ footer {
 }
 
 .buscador button {
-    position: absolute; /* Posiciona la lupa dentro del input */
-    right: 10px; /* Distancia desde el borde derecho */
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%); /* Ajuste fino para centrar */
-    background: none;
+    padding: 10px 20px;
+    background-color: #eb1c24;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 0;
-    font-size: 1.2em; /* Tamaño del ícono */
-    color: #eb1c24; /* Color del ícono */
-    transition: color 0.3s ease;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .buscador button:hover {
-    color: #c82333; /* Color más oscuro al pasar el mouse */
+    background-color: #c82333; /* Color más oscuro al pasar el mouse */
+}
+
+.buscador button i {
+    font-size: 1em; /* Tamaño del ícono */
 }
 
 /* ===== Media Queries para responsividad ===== */
 
 @media (max-width: 768px) {
     .buscador {
-        max-width: 90%; /* Reduce el ancho en pantallas pequeñas */
+        flex-direction: column; /* Apila el input y el botón verticalmente */
+        gap: 10px;
     }
 
+    .buscador input[type="text"] {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .buscador button {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+}
+
+@media (max-width: 480px) {
     .buscador input[type="text"] {
         font-size: 0.9em; /* Reduce el tamaño de la fuente */
     }
 
     .buscador button {
-        font-size: 1em; /* Reduce el tamaño del ícono */
+        font-size: 0.9em; /* Reduce el tamaño de la fuente */
     }
 }
 
