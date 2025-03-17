@@ -96,8 +96,27 @@ header {
 
 /* Mostrar el ícono de hamburguesa solo en dispositivos móviles */
 @media (max-width: 768px) {
+header {
+    flex-direction: row; /* Mantén los elementos en una fila */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center;
+    padding: 10px 20px; /* Ajusta el padding para móviles */
+}
+
+
     .menu-hamburguesa {
         display: block; /* Mostrar en dispositivos móviles */
+        order:1;
+    }
+    .logo-container {
+        position: static; /* Quita el posicionamiento absoluto */
+        transform: none; /* Quita la transformación */
+        order: 2; /* Coloca el logo en el centro */
+        text-align: center; /* Centra el logo */
+        flex: 1; /* Ocupa el espacio restante */
+    }
+    .nav-carrito {
+        order: 3; /* Coloca el carrito a la derecha */
     }
 
     .nav-principal {
@@ -127,6 +146,7 @@ header {
     .nav-principal a:hover {
         background-color: #FFD700; /* Efecto hover */
     }
+
 }
 
 /* ===== Main ===== */
