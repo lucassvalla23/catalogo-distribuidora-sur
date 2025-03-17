@@ -155,3 +155,13 @@ function toggleMenu() {
     const navPrincipal = document.getElementById('nav-principal');
     navPrincipal.classList.toggle('mostrar'); // Alternar la clase "mostrar"
 }
+
+// Cerrar el menú al hacer clic fuera de él
+document.addEventListener("click", (event) => {
+    const navPrincipal = document.getElementById("nav-principal");
+    const menuHamburguesa = document.querySelector(".menu-hamburguesa");
+
+    if (!navPrincipal.contains(event.target) && !menuHamburguesa.contains(event.target)) {
+        navPrincipal.classList.remove("mostrar");
+    }
+});

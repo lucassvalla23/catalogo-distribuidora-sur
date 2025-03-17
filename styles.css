@@ -96,18 +96,18 @@ header {
 
 /* Mostrar el ícono de hamburguesa solo en dispositivos móviles */
 @media (max-width: 768px) {
-header {
-    flex-direction: row; /* Mantén los elementos en una fila */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    align-items: center;
-    padding: 10px 20px; /* Ajusta el padding para móviles */
-}
-
+    header {
+        flex-direction: row; /* Mantén los elementos en una fila */
+        justify-content: space-between; /* Distribuye el espacio entre los elementos */
+        align-items: center;
+        padding: 10px 20px; /* Ajusta el padding para móviles */
+    }
 
     .menu-hamburguesa {
         display: block; /* Mostrar en dispositivos móviles */
-        order:1;
+        order: 1;
     }
+
     .logo-container {
         position: static; /* Quita el posicionamiento absoluto */
         transform: none; /* Quita la transformación */
@@ -115,30 +115,34 @@ header {
         text-align: center; /* Centra el logo */
         flex: 1; /* Ocupa el espacio restante */
     }
+
     .nav-carrito {
         order: 3; /* Coloca el carrito a la derecha */
     }
 
     .nav-principal {
-        display: none; /* Ocultar el menú principal por defecto en móviles */
+        display: flex; /* Cambia a flex para que se pueda animar */
         flex-direction: column;
-        position: absolute;
-        top: 60px; /* Ajusta según la altura de tu header */
+        position: fixed; /* Fija el menú en la pantalla */
+        top: 0;
         left: 0;
-        width: 100%;
+        width: 250px; /* Ancho de la barra lateral */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
         background-color: #FFD700; /* Fondo del menú */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
         z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
+        transform: translateX(-100%); /* Oculta el menú fuera de la pantalla */
+        transition: transform 0.3s ease; /* Transición suave */
     }
 
     .nav-principal.mostrar {
-        display: flex; /* Mostrar el menú cuando tenga la clase "mostrar" */
+        transform: translateX(0); /* Muestra el menú deslizándolo hacia adentro */
     }
 
     .nav-principal a {
         padding: 10px 20px; /* Espaciado para los enlaces */
         border-bottom: 1px solid #FFD700; /* Separador entre enlaces */
-        text-align: center; /* Centrar el texto */
+        text-align: left; /* Alinea el texto a la izquierda */
         color: #ed1b24; /* Color del texto */
         text-decoration: none; /* Quitar subrayado */
     }
@@ -146,7 +150,6 @@ header {
     .nav-principal a:hover {
         background-color: #FFD700; /* Efecto hover */
     }
-
 }
 
 /* ===== Main ===== */
