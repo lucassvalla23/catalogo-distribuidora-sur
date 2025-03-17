@@ -147,4 +147,8 @@ document.getElementById('buscador-input').addEventListener('input', function () 
         }
     });
 });
+function toggleMenu() {
+    const navPrincipal = document.getElementById('nav-principal');
+    navPrincipal.classList.toggle('mostrar'); // Alternar la clase "mostrar"
+}
 });

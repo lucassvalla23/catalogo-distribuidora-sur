@@ -80,12 +80,34 @@ header {
     margin-right: 5px;
 }
 
-/* Botón de menú hamburguesa */
+/* Estilos para el menú hamburguesa */
 .menu-hamburguesa {
-    display: none;
+    display: none; /* Ocultar por defecto en pantallas grandes */
     font-size: 24px;
     cursor: pointer;
     padding: 10px;
+}
+
+/* Mostrar el ícono de hamburguesa solo en dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-hamburguesa {
+        display: block; /* Mostrar en dispositivos móviles */
+    }
+
+    .nav-principal {
+        display: none; /* Ocultar el menú principal por defecto en móviles */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajusta según la altura de tu header */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* Fondo del menú */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+    }
+
+    .nav-principal.mostrar {
+        display: flex; /* Mostrar el menú cuando tenga la clase "mostrar" */
+    }
 }
 
 /* ===== Main ===== */
@@ -96,7 +118,7 @@ header {
     background-color: #FFD700;
     border-radius: 10px;
     margin: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
 }
 
 .bienvenida h1 {
@@ -269,7 +291,7 @@ footer {
 }
 
 .filtros h2 {
-    color: #333;
+    color: #eb1c24;
     margin-bottom: 30px;
     font-size: 1.8em;
 }
