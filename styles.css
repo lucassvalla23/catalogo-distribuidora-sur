@@ -24,18 +24,22 @@ img {
 header {
     background-color: #eb1c24;
     color: #fff;
-    padding: 10px 20px;
+    padding: 25px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
 }
-
+ /* Contenedor del logo */
+.logo-container {
+    position: absolute; /* Posiciona el logo en el centro */
+    left: 50%; /* Lo mueve al 50% del ancho del header */
+    transform: translateX(-50%); /* Lo centra exactamente */
+}
 .logo-container img {
-    height: 50px;
-    width: auto;
-    transition: transform 0.3s ease;
+    height: auto;
+    width: 50px;
 }
 
 .logo-container img:hover {
@@ -47,6 +51,7 @@ header {
     display: flex;
     gap: 20px;
     align-items: center;
+    margin-right: auto; /* Empuja el menú a la izquierda */
 }
 
 .nav-principal a {
@@ -70,6 +75,7 @@ header {
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease;
+    margin-left: auto; /* Empuja el carrito a la derecha */
 }
 
 .nav-carrito a:hover {
