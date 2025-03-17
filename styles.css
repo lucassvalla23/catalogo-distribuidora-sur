@@ -112,14 +112,14 @@ header {
 
     .nav-principal a {
         padding: 10px 20px; /* Espaciado para los enlaces */
-        border-bottom: 1px solid #eee; /* Separador entre enlaces */
+        border-bottom: 1px solid #FFD700; /* Separador entre enlaces */
         text-align: center; /* Centrar el texto */
-        color: #333; /* Color del texto */
+        color: #ed1b24; /* Color del texto */
         text-decoration: none; /* Quitar subrayado */
     }
 
     .nav-principal a:hover {
-        background-color: #f5f5f5; /* Efecto hover */
+        background-color: #FFD700; /* Efecto hover */
     }
 }
 
