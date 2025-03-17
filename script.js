@@ -96,59 +96,62 @@ document.addEventListener("DOMContentLoaded", () => {
         totalCarrito.textContent = total.toFixed(2);
         contadorCarrito.textContent = carrito.length;
     }
+
     // Funcionalidad del Buscador
-document.getElementById('boton-buscar').addEventListener('click', function () {
-    const textoBusqueda = document.getElementById('buscador-input').value.toLowerCase();
-    const productos = document.querySelectorAll('.producto');
+    document.getElementById('boton-buscar').addEventListener('click', function () {
+        const textoBusqueda = document.getElementById('buscador-input').value.toLowerCase();
+        const productos = document.querySelectorAll('.producto');
 
-    productos.forEach(producto => {
-        const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
-        if (nombreProducto.includes(textoBusqueda)) {
-            producto.style.display = 'block';
-        } else {
-            producto.style.display = 'none';
-        }
+        productos.forEach(producto => {
+            const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+            if (nombreProducto.includes(textoBusqueda)) {
+                producto.style.display = 'block';
+            } else {
+                producto.style.display = 'none';
+            }
+        });
+    });
+
+    // Funcionalidad de los Botones de Filtrado
+    document.getElementById('filtro-gomita').addEventListener('click', function () {
+        filtrarProductos('gomita');
+    });
+
+    document.getElementById('filtro-regaliz').addEventListener('click', function () {
+        filtrarProductos('regaliz');
+    });
+
+    function filtrarProductos(categoria) {
+        const productos = document.querySelectorAll('.producto');
+
+        productos.forEach(producto => {
+            const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+            if (nombreProducto.includes(categoria)) {
+                producto.style.display = 'block';
+            } else {
+                producto.style.display = 'none';
+            }
+        });
+    }
+
+    // Búsqueda en Tiempo Real (Opcional)
+    document.getElementById('buscador-input').addEventListener('input', function () {
+        const textoBusqueda = this.value.toLowerCase();
+        const productos = document.querySelectorAll('.producto');
+
+        productos.forEach(producto => {
+            const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+            if (nombreProducto.includes(textoBusqueda)) {
+                producto.style.display = 'block';
+            } else {
+                producto.style.display = 'none';
+            }
+        });
     });
 });
 
-// Funcionalidad de los Botones de Filtrado
-document.getElementById('filtro-gomita').addEventListener('click', function () {
-    filtrarProductos('gomita');
-});
-
-document.getElementById('filtro-regaliz').addEventListener('click', function () {
-    filtrarProductos('regaliz');
-});
-
-function filtrarProductos(categoria) {
-    const productos = document.querySelectorAll('.producto');
-
-    productos.forEach(producto => {
-        const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
-        if (nombreProducto.includes(categoria)) {
-            producto.style.display = 'block';
-        } else {
-            producto.style.display = 'none';
-        }
-    });
-}
-
-// Búsqueda en Tiempo Real (Opcional)
-document.getElementById('buscador-input').addEventListener('input', function () {
-    const textoBusqueda = this.value.toLowerCase();
-    const productos = document.querySelectorAll('.producto');
-
-    productos.forEach(producto => {
-        const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
-        if (nombreProducto.includes(textoBusqueda)) {
-            producto.style.display = 'block';
-        } else {
-            producto.style.display = 'none';
-        }
-    });
-});
+// Mover la función toggleMenu fuera del DOMContentLoaded
 function toggleMenu() {
     const navPrincipal = document.getElementById('nav-principal');
     navPrincipal.classList.toggle('mostrar'); // Alternar la clase "mostrar"
 }
-});
