@@ -103,10 +103,23 @@ header {
         width: 100%;
         background-color: #fff; /* Fondo del menú */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+        z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
     }
 
     .nav-principal.mostrar {
         display: flex; /* Mostrar el menú cuando tenga la clase "mostrar" */
+    }
+
+    .nav-principal a {
+        padding: 10px 20px; /* Espaciado para los enlaces */
+        border-bottom: 1px solid #eee; /* Separador entre enlaces */
+        text-align: center; /* Centrar el texto */
+        color: #333; /* Color del texto */
+        text-decoration: none; /* Quitar subrayado */
+    }
+
+    .nav-principal a:hover {
+        background-color: #f5f5f5; /* Efecto hover */
     }
 }
 
