@@ -128,7 +128,7 @@ header {
         left: 0;
         width: 250px; /* Ancho de la barra lateral */
         height: 100vh; /* Ocupa toda la altura de la pantalla */
-        background-color: #FFD700; /* Fondo del menú */
+        background-color: #ed1b24; /* Fondo del menú */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
         z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
         transform: translateX(-100%); /* Oculta el menú fuera de la pantalla */
@@ -143,12 +143,12 @@ header {
         padding: 10px 20px; /* Espaciado para los enlaces */
         border-bottom: 1px solid #FFD700; /* Separador entre enlaces */
         text-align: left; /* Alinea el texto a la izquierda */
-        color: #ed1b24; /* Color del texto */
+        color: #FFD700; /* Color del texto */
         text-decoration: none; /* Quitar subrayado */
     }
 
     .nav-principal a:hover {
-        background-color: #FFD700; /* Efecto hover */
+        background-color: #ed1b24; /* Efecto hover */
     }
 }
 
@@ -235,8 +235,9 @@ header {
     top: 0;
     right: 0;
     width: 300px;
-    background-color: #FFD700;
-    border-left: 1px solid #FFD700;
+    background-color: #ed1b24;
+    border-left: 1px solid #ed1b24;
+    color: #FFD700;
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     height: 100vh;
@@ -261,8 +262,8 @@ header {
 }
 
 #vaciar-carrito {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: #FFD700;
+    color: #000;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -271,7 +272,7 @@ header {
 }
 
 #vaciar-carrito:hover {
-    background-color: #c82333;
+    background-color: #FFD700;
 }
 
 .cerrar-carrito {
