@@ -882,3 +882,22 @@ footer {
     transform: translateY(0); /* Efecto de clic */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
+/* Animación para el ícono de inicio */
+.nav-principal a[href="index.html"] i.fa-home {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-principal a[href="index.html"]:hover i.fa-home {
+    animation: bounce 0.5s ease infinite;
+    color: #FFD700; /* Cambia el color al pasar el mouse */
+}
+
+/* Definición de la animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
