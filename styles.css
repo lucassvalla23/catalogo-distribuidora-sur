@@ -1051,3 +1051,31 @@ footer {
         transform: rotate(360deg);
     }
 }   
+#boton-pagar {
+    background-color: #009ee3; /* Color azul característico de Mercado Pago */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#boton-pagar:hover {
+    background-color: #007bb5; /* Un tono más oscuro de azul al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+#boton-pagar:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+#boton-pagar i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
