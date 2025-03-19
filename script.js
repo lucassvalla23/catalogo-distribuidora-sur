@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let carrito = []; // Array para almacenar los productos del carrito
+    const carrito = []; // Array para almacenar los productos del carrito
     const contadorCarrito = document.getElementById("contador-carrito");
     const listaCarrito = document.getElementById("lista-carrito");
     const totalCarrito = document.getElementById("total-carrito");
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function cargarCarrito() {
         const carritoGuardado = localStorage.getItem("carrito");
         if (carritoGuardado) {
-            carrito = JSON.parse(carritoGuardado); // Cargar el carrito guardado
+            carrito.length = 0; // Vaciar el carrito actual
+            carrito.push(...JSON.parse(carritoGuardado)); // Cargar el carrito guardado
             actualizarCarrito(); // Actualizar la visualización del carrito
         }
     }
@@ -71,31 +72,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Crear el objeto del producto
             const producto = {
-                id: productoDiv.getAttribute("data-id"), // ID único del producto
                 nombre,
                 tipoCompra,
                 precio,
             };
 
-            // Verificar si el producto ya está en el carrito
-            const productoExistente = carrito.find((item) => item.id === producto.id && item.tipoCompra === producto.tipoCompra);
-
-            if (productoExistente) {
-                productoExistente.cantidad = (productoExistente.cantidad || 1) + 1; // Incrementar la cantidad si ya existe
-            } else {
-                producto.cantidad = 1; // Agregar el producto con cantidad 1
-                carrito.push(producto);
-            }
+            // Agregar el producto al carrito
+            carrito.push(producto);
 
             // Actualizar el carrito y guardar en localStorage
             actualizarCarrito();
-            guardarCarrito();
         });
     });
 
     // Vaciar carrito
     botonVaciar.addEventListener("click", () => {
-        carrito = []; // Vaciar el carrito
+        carrito.length = 0; // Vaciar el carrito
         actualizarCarrito(); // Actualizar la visualización
         localStorage.removeItem("carrito"); // Eliminar el carrito de localStorage
     });
@@ -109,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const li = document.createElement("li");
 
             // Mostrar los detalles del producto en el carrito
-            li.textContent = `${producto.nombre} (${producto.tipoCompra}) - $${producto.precio} x ${producto.cantidad}`;
+            li.textContent = `${producto.nombre} (${producto.tipoCompra}) - $${producto.precio}`;
 
             // Botón para eliminar producto del carrito
             const botonEliminar = document.createElement("button");
@@ -123,12 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             li.appendChild(botonEliminar);
             listaCarrito.appendChild(li);
-            total += producto.precio * producto.cantidad;
+            total += producto.precio;
         });
 
         // Actualizar el total y el contador del carrito
         totalCarrito.textContent = total.toFixed(2);
-        contadorCarrito.textContent = carrito.reduce((sum, producto) => sum + producto.cantidad, 0);
+        contadorCarrito.textContent = carrito.length;
 
         // Guardar el carrito en localStorage
         guardarCarrito();
@@ -149,11 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     Authorization: "Bearer APP_USR-4538737680093787-031821-2da7e0652bd06c6e801427d001fe251b-343458851", // Usa tu Access Token
                 },
                 body: JSON.stringify({
-                    items: carrito.map((producto) => ({
-                        title: producto.nombre, // Nombre del producto
-                        quantity: producto.cantidad, // Cantidad del producto
-                        unit_price: producto.precio, // Precio unitario
-                    })),
+                    items: [
+                        {
+                            title: "Compra en Distribuidora Sur", // Nombre del producto o servicio
+                            quantity: 1,
+                            unit_price: calcularTotalCarrito(), // Total del carrito
+                        },
+                    ],
                     back_urls: {
                         success: "http://127.0.0.1:5500/exito.html", // URL de éxito
                         failure: "http://127.0.0.1:5500/error.html", // URL de error
@@ -172,6 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Hubo un error al procesar el pago. Inténtalo de nuevo.");
         }
     });
+
+    // Función para calcular el total del carrito
+    function calcularTotalCarrito() {
+        return carrito.reduce((total, producto) => total + producto.precio, 0);
+    }
 
     // ===== Funcionalidad del Buscador =====
     document.getElementById("boton-buscar").addEventListener("click", function () {
