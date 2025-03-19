@@ -70,15 +70,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const tipoCompra = opcionCompra.value; // "unidad" o "caja"
             const precio = parseFloat(opcionCompra.selectedOptions[0].getAttribute("data-precio"));
 
-            // Crear el objeto del producto
-            const producto = {
-                nombre,
-                tipoCompra,
-                precio,
-            };
+            // Verificar si el producto ya está en el carrito
+            const productoExistente = carrito.find((producto) => producto.nombre === nombre && producto.tipoCompra === tipoCompra);
 
-            // Agregar el producto al carrito
-            carrito.push(producto);
+            if (productoExistente) {
+                // Si el producto ya existe, incrementar la cantidad
+                productoExistente.cantidad += 1;
+            } else {
+                // Si el producto no existe, agregarlo al carrito con cantidad 1
+                const producto = {
+                    nombre,
+                    tipoCompra,
+                    precio,
+                    cantidad: 1,
+                };
+                carrito.push(producto);
+            }
 
             // Actualizar el carrito y guardar en localStorage
             actualizarCarrito();
@@ -101,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const li = document.createElement("li");
 
             // Mostrar los detalles del producto en el carrito
-            li.textContent = `${producto.nombre} (${producto.tipoCompra}) - $${producto.precio}`;
+            li.textContent = `${producto.nombre} (${producto.tipoCompra}) - $${producto.precio} x ${producto.cantidad}`;
 
             // Botón para eliminar producto del carrito
             const botonEliminar = document.createElement("button");
@@ -115,12 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             li.appendChild(botonEliminar);
             listaCarrito.appendChild(li);
-            total += producto.precio;
+            total += producto.precio * producto.cantidad;
         });
 
         // Actualizar el total y el contador del carrito
         totalCarrito.textContent = total.toFixed(2);
-        contadorCarrito.textContent = carrito.length;
+        contadorCarrito.textContent = carrito.reduce((total, producto) => total + producto.cantidad, 0);
 
         // Guardar el carrito en localStorage
         guardarCarrito();
@@ -169,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para calcular el total del carrito
     function calcularTotalCarrito() {
-        return carrito.reduce((total, producto) => total + producto.precio, 0);
+        return carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
     }
 
     // ===== Funcionalidad del Buscador =====
