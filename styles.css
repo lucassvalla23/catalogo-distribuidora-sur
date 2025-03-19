@@ -264,18 +264,29 @@ header {
 }
 
 #vaciar-carrito {
-    background-color: #FFD700;
-    color: #fff;
+    background-color: #FFD700; /* Color amarillo */
+    color: #333; /* Color de texto oscuro para mejor contraste */
     border: none;
-    padding: 10px 15px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
     width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
 
 #vaciar-carrito:hover {
-    background-color: #FFD700;
+    background-color: #e6c200; /* Un tono más oscuro de amarillo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
 }
+#vaciar-carrito:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
 
 .cerrar-carrito {
     position: absolute;
@@ -285,11 +296,11 @@ header {
     border: none;
     font-size: 1.5em;
     cursor: pointer;
-    color: #333;
+    color: white;
 }
 
 .cerrar-carrito:hover {
-    color: #dc3545;
+    color: #333
 }
 
 /* ===== Footer ===== */
