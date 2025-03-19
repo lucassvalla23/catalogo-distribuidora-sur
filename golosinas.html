@@ -7,17 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/icon" href="img/favicon.ico">
-      <!-- SDK de Mercado Pago -->
-<script src="https://sdk.mercadopago.com/js/v2"></script>
+    <!-- SDK de Mercado Pago -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-    }
-</style>
 <body>
-
     <header>
         <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
         <nav class="nav-principal" id="nav-principal">
@@ -27,10 +26,10 @@
             <a href="contacto.html">
                 <i class="fas fa-envelope"></i> Contacto
             </a>
-             <!-- Botón de flecha hacia atrás -->
-        <button id="boton-atras" class="boton-atras">
-            <i class="fas fa-arrow-left"></i> <!-- Ícono de flecha hacia atrás de FontAwesome -->
-        </button>
+            <!-- Botón de flecha hacia atrás -->
+            <button id="boton-atras" class="boton-atras" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
         </nav>
         <div class="logo-container">
             <a href="index.html">
@@ -39,7 +38,7 @@
         </div>
         <nav class="nav-carrito">
             <a href="#" id="ver-carrito">
-                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+                <i class="fas fa-shopping-cart"></i> (<span id="contador-carrito">0</span>)
             </a>
         </nav>
     </header>
@@ -48,96 +47,96 @@
         <section class="filtros">
             <h2>Explora Nuestras Categorías de Golosinas</h2>
             <div class="botones-filtro">
-                <!-- Alfajores -->
-                <a href="alfajores.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/alfajores.png" alt="Alfajor">
-                    </div>
-                    <span>Alfajores</span>
-                </a>
+              <!-- Alfajores -->
+              <a href="alfajores.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/alfajores.png" alt="Alfajor">
+                </div>
+                <span>Alfajores</span>
+            </a>
 
-                <!-- Caramelos -->
-                <a href="caramelos.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/caramelos.png" alt="Caramelo">
-                    </div>
-                    <span>Caramelos</span>
-                </a>
+            <!-- Caramelos -->
+            <a href="caramelos.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/caramelos.png" alt="Caramelo">
+                </div>
+                <span>Caramelos</span>
+            </a>
 
-                <!-- Chupetines Y Paletas -->
-                <a href="chupetinesypaletas.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/palteas.png" alt="Chupetínes/Paletas">
-                    </div>
-                    <span>Chupetines / Paletas</span>
-                </a>
+            <!-- Chupetines Y Paletas -->
+            <a href="chupetinesypaletas.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/palteas.png" alt="Chupetínes/Paletas">
+                </div>
+                <span>Chupetines / Paletas</span>
+            </a>
 
-                <!-- Chicles -->
-                <a href="chicles.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/chciles.png" alt="Chicle">
-                    </div>
-                    <span>Chicles</span>
-                </a>
+            <!-- Chicles -->
+            <a href="chicles.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/chciles.png" alt="Chicle">
+                </div>
+                <span>Chicles</span>
+            </a>
 
-                <!-- Gomitas -->
-                <a href="gomitas.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/gomitas.png   " alt="Gomitas">
-                    </div>
-                    <span>Gomitas</span>
-                </a>
+            <!-- Gomitas -->
+            <a href="gomitas.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/gomitas.png   " alt="Gomitas">
+                </div>
+                <span>Gomitas</span>
+            </a>
 
-                <!-- Cubanitos de Oblea -->
-                <a href="cubanitos.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/cubanitos.png" alt="Cubanitos">
-                    </div>
-                    <span>Cubanitos</span>
-                </a>
+            <!-- Cubanitos de Oblea -->
+            <a href="cubanitos.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/cubanitos.png" alt="Cubanitos">
+                </div>
+                <span>Cubanitos</span>
+            </a>
 
-                <!-- Confites -->
-                <a href="confites.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/confites.png" alt="Confites">
-                    </div>
-                    <span>Confites</span>
-                </a>
+            <!-- Confites -->
+            <a href="confites.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/confites.png" alt="Confites">
+                </div>
+                <span>Confites</span>
+            </a>
 
-                <!-- Chocolates -->
-                <a href="chocolates.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/chocolates.png" alt="Chocolate">
-                    </div>
-                    <span>Chocolates</span>
-                </a>
+            <!-- Chocolates -->
+            <a href="chocolates.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/chocolates.png" alt="Chocolate">
+                </div>
+                <span>Chocolates</span>
+            </a>
 
-                <!-- Girasoles -->
-                <a href="girasoles.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/girasoles.png" alt="Girasoles">
-                    </div>
-                    <span>Girasoles</span>
-                </a>
-                 <!-- Turrones -->
-                 <a href="turrones.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/turron.png" alt="Turrones">
-                    </div>
-                    <span>Turrones</span>
-                </a>
-                 <!-- Importados -->
-                 <a href="importados.html" class="boton-filtro">
-                    <div class="icono-categoria">
-                        <img src="img/Importados.png" alt="Importados">
-                    </div>
-                    <span>Importados</span>
-                </a>
-            </div>
-        </section>
-    </main>
-     <!-- Botón flotante de WhatsApp -->
-     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+            <!-- Girasoles -->
+            <a href="girasoles.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/girasoles.png" alt="Girasoles">
+                </div>
+                <span>Girasoles</span>
+            </a>
+             <!-- Turrones -->
+             <a href="turrones.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/turron.png" alt="Turrones">
+                </div>
+                <span>Turrones</span>
+            </a>
+             <!-- Importados -->
+             <a href="importados.html" class="boton-filtro">
+                <div class="icono-categoria">
+                    <img src="img/Importados.png" alt="Importados">
+                </div>
+                <span>Importados</span>
+            </a>
+        </div>
+    </section>
+</main>   
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
         <i class="fab fa-whatsapp"></i>
     </a>
     <!-- Carrito de compras -->
@@ -151,11 +150,9 @@
             <button id="boton-pagar">Pagar con Mercado Pago</button>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
     </footer>
-
     <script src="script.js"></script>
     <script src="carrito.js"></script>
 </body>

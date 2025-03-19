@@ -252,6 +252,9 @@ header {
     transform: translateX(0);
 }
 
+.carrito.oculto {
+    display: none;
+}
 #lista-carrito {
     list-style: none;
     padding: 0;
