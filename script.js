@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         locale: "es-AR", // Configura el idioma
     });
 
+    // ===== Funcionalidad del botón hacia atrás =====
+    const botonAtras = document.getElementById("boton-atras");
+    botonAtras.addEventListener("click", () => {
+        window.history.back(); // Retrocede en el historial del navegador
+    });
+
     // ===== Funcionalidad del carrito =====
 
     // Función para guardar el carrito en localStorage
