@@ -1,5 +1,3 @@
-// carrito.js
-
 document.addEventListener("DOMContentLoaded", () => {
     const carrito = []; // Array para almacenar los productos del carrito
     const contadorCarrito = document.getElementById("contador-carrito");
