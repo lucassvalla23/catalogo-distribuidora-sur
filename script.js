@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const carrito = [];
+    const carrito = []; // Array para almacenar los productos del carrito
     const contadorCarrito = document.getElementById("contador-carrito");
     const listaCarrito = document.getElementById("lista-carrito");
     const totalCarrito = document.getElementById("total-carrito");
@@ -9,6 +9,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
     // ===== Funcionalidad del carrito =====
+
+    // Función para guardar el carrito en localStorage
+    function guardarCarrito() {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+
+    // Función para cargar el carrito desde localStorage
+    function cargarCarrito() {
+        const carritoGuardado = localStorage.getItem("carrito");
+        if (carritoGuardado) {
+            carrito.length = 0; // Vaciar el carrito actual
+            carrito.push(...JSON.parse(carritoGuardado)); // Cargar el carrito guardado
+            actualizarCarrito(); // Actualizar la visualización del carrito
+        }
+    }
+
+    // Cargar el carrito al iniciar la página
+    cargarCarrito();
+
     // Mostrar carrito
     botonVerCarrito.addEventListener("click", (e) => {
         e.preventDefault();
@@ -49,22 +68,23 @@ document.addEventListener("DOMContentLoaded", () => {
             // Crear el objeto del producto
             const producto = {
                 nombre,
-                tipoCompra,  // Agregamos el tipo de compra (unidad o caja)
+                tipoCompra,
                 precio,
             };
 
             // Agregar el producto al carrito
             carrito.push(producto);
 
-            // Actualizar el carrito
+            // Actualizar el carrito y guardar en localStorage
             actualizarCarrito();
         });
     });
 
     // Vaciar carrito
     botonVaciar.addEventListener("click", () => {
-        carrito.length = 0;
-        actualizarCarrito();
+        carrito.length = 0; // Vaciar el carrito
+        actualizarCarrito(); // Actualizar la visualización
+        localStorage.removeItem("carrito"); // Eliminar el carrito de localStorage
     });
 
     // Función para actualizar el carrito
@@ -85,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             botonEliminar.addEventListener("click", () => {
                 carrito.splice(index, 1); // Eliminar el producto del carrito
                 actualizarCarrito(); // Actualizar la visualización del carrito
+                guardarCarrito(); // Guardar el carrito en localStorage
             });
 
             li.appendChild(botonEliminar);
@@ -95,65 +116,68 @@ document.addEventListener("DOMContentLoaded", () => {
         // Actualizar el total y el contador del carrito
         totalCarrito.textContent = total.toFixed(2);
         contadorCarrito.textContent = carrito.length;
+
+        // Guardar el carrito en localStorage
+        guardarCarrito();
     }
 
-    // Funcionalidad del Buscador
-    document.getElementById('boton-buscar').addEventListener('click', function () {
-        const textoBusqueda = document.getElementById('buscador-input').value.toLowerCase();
-        const productos = document.querySelectorAll('.producto');
+    // ===== Funcionalidad del Buscador =====
+    document.getElementById("boton-buscar").addEventListener("click", function () {
+        const textoBusqueda = document.getElementById("buscador-input").value.toLowerCase();
+        const productos = document.querySelectorAll(".producto");
 
-        productos.forEach(producto => {
-            const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+        productos.forEach((producto) => {
+            const nombreProducto = producto.querySelector("h3").textContent.toLowerCase();
             if (nombreProducto.includes(textoBusqueda)) {
-                producto.style.display = 'block';
+                producto.style.display = "block";
             } else {
-                producto.style.display = 'none';
+                producto.style.display = "none";
             }
         });
     });
 
-    // Funcionalidad de los Botones de Filtrado
-    document.getElementById('filtro-gomita').addEventListener('click', function () {
-        filtrarProductos('gomita');
+    // ===== Funcionalidad de los Botones de Filtrado =====
+    document.getElementById("filtro-gomita").addEventListener("click", function () {
+        filtrarProductos("gomita");
     });
 
-    document.getElementById('filtro-regaliz').addEventListener('click', function () {
-        filtrarProductos('regaliz');
+    document.getElementById("filtro-regaliz").addEventListener("click", function () {
+        filtrarProductos("regaliz");
     });
 
     function filtrarProductos(categoria) {
-        const productos = document.querySelectorAll('.producto');
+        const productos = document.querySelectorAll(".producto");
 
-        productos.forEach(producto => {
-            const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+        productos.forEach((producto) => {
+            const nombreProducto = producto.querySelector("h3").textContent.toLowerCase();
             if (nombreProducto.includes(categoria)) {
-                producto.style.display = 'block';
+                producto.style.display = "block";
             } else {
-                producto.style.display = 'none';
+                producto.style.display = "none";
             }
         });
     }
 
-    // Búsqueda en Tiempo Real (Opcional)
-    document.getElementById('buscador-input').addEventListener('input', function () {
+    // ===== Búsqueda en Tiempo Real (Opcional) =====
+    document.getElementById("buscador-input").addEventListener("input", function () {
         const textoBusqueda = this.value.toLowerCase();
-        const productos = document.querySelectorAll('.producto');
+        const productos = document.querySelectorAll(".producto");
 
-        productos.forEach(producto => {
-            const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+        productos.forEach((producto) => {
+            const nombreProducto = producto.querySelector("h3").textContent.toLowerCase();
             if (nombreProducto.includes(textoBusqueda)) {
-                producto.style.display = 'block';
+                producto.style.display = "block";
             } else {
-                producto.style.display = 'none';
+                producto.style.display = "none";
             }
         });
     });
 });
 
-// Mover la función toggleMenu fuera del DOMContentLoaded
+// ===== Funcionalidad del Menú Hamburguesa =====
 function toggleMenu() {
-    const navPrincipal = document.getElementById('nav-principal');
-    navPrincipal.classList.toggle('mostrar'); // Alternar la clase "mostrar"
+    const navPrincipal = document.getElementById("nav-principal");
+    navPrincipal.classList.toggle("mostrar"); // Alternar la clase "mostrar"
 }
 
 // Cerrar el menú al hacer clic fuera de él
