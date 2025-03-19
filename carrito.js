@@ -15,17 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 
+    // Función para cargar el carrito desde localStorage
     function cargarCarrito() {
         const carritoGuardado = localStorage.getItem("carrito");
         if (carritoGuardado) {
             carrito.length = 0; // Vaciar el carrito actual
             carrito.push(...JSON.parse(carritoGuardado)); // Cargar el carrito guardado
             actualizarCarrito(); // Actualizar la visualización del carrito
-    
-            // Mostrar el carrito si hay productos
-            if (carrito.length > 0) {
-                divCarrito.classList.add("mostrar");
-            }
         }
     }
 
