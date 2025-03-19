@@ -156,11 +156,12 @@ header {
 /* Sección de bienvenida */
 .bienvenida {
     text-align: center;
-    padding: 60px 20px;
+    padding: 20px 20px;
     background-color: #FFD700;
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0 4px 6px rgb(0, 0, 0);
+    
 }
 
 .bienvenida h1 {
@@ -178,11 +179,12 @@ header {
 /* Sección de categorías */
 .categorias {
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 20px; /* Reducir el padding superior e inferior */
+    margin-top: -40px; /* Mover la sección hacia arriba */
 }
 
 .categorias h2 {
-    color: #FFD700;
+    color: #ed1b24;
     margin-bottom: 30px;
     font-size: 1.8em;
 }
