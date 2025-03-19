@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Actualizar el carrito y guardar en localStorage
             actualizarCarrito();
+            guardarCarrito(); // Guardar el carrito en localStorage
         });
     });
 
