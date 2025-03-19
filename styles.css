@@ -903,3 +903,61 @@ footer {
         transform: translateY(-5px);
     }
 }
+/* ===== Estilos para la página de pago exitoso ===== */
+.pago-exitoso {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-exito {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icono-exito {
+    font-size: 80px;
+    color: #00a24e; /* Color verde para el ícono de éxito */
+    margin-bottom: 20px;
+    animation: bounce 1s ease infinite; /* Animación de rebote */
+}
+
+.pago-exitoso h1 {
+    font-size: 2.5em;
+    color: #eb1c24; /* Color rojo para el título */
+    margin-bottom: 20px;
+}
+
+.pago-exitoso p {
+    font-size: 1.2em;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+.boton-inicio {
+    background-color: #eb1c24; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-inicio:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de levitación */
+}
+
+/* Animación de rebote para el ícono de éxito */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

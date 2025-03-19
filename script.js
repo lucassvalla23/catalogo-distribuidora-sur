@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const divCarrito = document.getElementById("carrito");
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
+    // ===== Configuración de Mercado Pago =====
+    const mp = new MercadoPago("APP_USR-c636cfaa-8a31-4584-892d-32d5ca3a2028", {
+        locale: "es-AR", // Configura el idioma
+    });
+
     // ===== Funcionalidad del carrito =====
 
     // Función para guardar el carrito en localStorage
@@ -119,6 +124,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Guardar el carrito en localStorage
         guardarCarrito();
+    }
+
+    // ===== Funcionalidad de pago con Mercado Pago =====
+
+    // Botón de pago
+    const botonPagar = document.getElementById("boton-pagar");
+
+    botonPagar.addEventListener("click", async () => {
+        try {
+            // Crear un objeto de preferencia de pago
+            const response = await fetch("https://api.mercadopago.com/checkout/preferences", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer APP_USR-4538737680093787-031821-2da7e0652bd06c6e801427d001fe251b-343458851", // Usa tu Access Token
+                },
+                body: JSON.stringify({
+                    items: [
+                        {
+                            title: "Compra en Distribuidora Sur", // Nombre del producto o servicio
+                            quantity: 1,
+                            unit_price: calcularTotalCarrito(), // Total del carrito
+                        },
+                    ],
+                    back_urls: {
+                        success: "exito.html", // URL de éxito
+                        failure: "https://tupagina.com/error", // URL de error
+                        pending: "https://tupagina.com/pendiente", // URL de pago pendiente
+                    },
+                    auto_return: "approved", // Redirigir automáticamente después del pago
+                }),
+            });
+
+            const preference = await response.json();
+
+            // Redirigir al cliente a Mercado Pago
+            window.location.href = preference.init_point;
+        } catch (error) {
+            console.error("Error al generar el pago:", error);
+            alert("Hubo un error al procesar el pago. Inténtalo de nuevo.");
+        }
+    });
+
+    // Función para calcular el total del carrito
+    function calcularTotalCarrito() {
+        return carrito.reduce((total, producto) => total + producto.precio, 0);
     }
 
     // ===== Funcionalidad del Buscador =====
