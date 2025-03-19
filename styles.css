@@ -961,3 +961,93 @@ footer {
         transform: translateY(-10px);
     }
 }
+/* ===== Estilos para la página de pago fallido ===== */
+.pago-error {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-error {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icono-error {
+    font-size: 80px;
+    color: #eb1c24; /* Color rojo para el ícono de error */
+    margin-bottom: 20px;
+    animation: shake 0.5s ease infinite; /* Animación de sacudida */
+}
+
+.pago-error h1 {
+    font-size: 2.5em;
+    color: #eb1c24; /* Color rojo para el título */
+    margin-bottom: 20px;
+}
+
+.pago-error p {
+    font-size: 1.2em;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+/* Animación de sacudida para el ícono de error */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* ===== Estilos para la página de pago pendiente ===== */
+.pago-pendiente {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-pendiente {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.icono-pendiente {
+    font-size: 80px;
+    color: #007bff; /* Color azul para el ícono de pendiente */
+    margin-bottom: 20px;
+    animation: rotate 2s linear infinite; /* Animación de rotación */
+}
+
+.pago-pendiente h1 {
+    font-size: 2.5em;
+    color: #007bff; /* Color azul para el título */
+    margin-bottom: 20px;
+}
+
+.pago-pendiente p {
+    font-size: 1.2em;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+/* Animación de rotación para el ícono de pendiente */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}   

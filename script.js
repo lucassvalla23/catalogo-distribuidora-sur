@@ -149,9 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         },
                     ],
                     back_urls: {
-                        success: "exito.html", // URL de éxito
-                        failure: "https://tupagina.com/error", // URL de error
-                        pending: "https://tupagina.com/pendiente", // URL de pago pendiente
+                        success: "http://127.0.0.1:5500/exito.html", // URL de éxito
+                        failure: "http://127.0.0.1:5500/error.html", // URL de error
+                        pending: "http://127.0.0.1:5500/pendiente.html", // URL de pago pendiente
                     },
                     auto_return: "approved", // Redirigir automáticamente después del pago
                 }),
