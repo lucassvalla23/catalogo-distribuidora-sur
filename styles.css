@@ -232,13 +232,15 @@ header {
 }
 
 /* ===== Carrito de compras ===== */
+/* Estilo para mostrar el carrito */
 .carrito {
+    display: block;
     position: fixed;
     top: 0;
     right: 0;
     width: 300px;
-    background-color: #ed1b24;
-    border-left: 1px solid #ed1b24;
+    background-color: #eb1c24;
+    border-left: 1px solid #eb1c24;
     color: #FFD700;
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
