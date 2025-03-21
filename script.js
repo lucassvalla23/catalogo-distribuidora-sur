@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         locale: "es-AR", // Configura el idioma
     });
 
-    // ===== Funcionalidad del carrito =====
 
     // Función para guardar el carrito en localStorage
     function guardarCarrito() {
