@@ -175,16 +175,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== Funcionalidad del Buscador =====
-    document.getElementById("boton-buscar").addEventListener("click", function () {
-        const textoBusqueda = document.getElementById("buscador-input").value.toLowerCase();
-        const productos = document.querySelectorAll(".producto");
+    document.getElementById("buscador-input").addEventListener("input", function () {
+        const textoBusqueda = this.value.toLowerCase(); // Obtener el texto de búsqueda en minúsculas
+        const productos = document.querySelectorAll(".producto"); // Obtener todos los productos
 
         productos.forEach((producto) => {
-            const nombreProducto = producto.querySelector("h3").textContent.toLowerCase();
-            if (nombreProducto.includes(textoBusqueda)) {
-                producto.style.display = "block";
+            const nombreProducto = producto.querySelector("h3").textContent.toLowerCase(); // Obtener el nombre del producto en minúsculas
+
+            // Si el campo de búsqueda está vacío, mostrar todos los productos
+            if (textoBusqueda === "") {
+                producto.style.display = "block"; // Mostrar el producto
             } else {
-                producto.style.display = "none";
+                // Si el nombre del producto incluye el texto de búsqueda, mostrarlo; de lo contrario, ocultarlo
+                if (nombreProducto.includes(textoBusqueda)) {
+                    producto.style.display = "block"; // Mostrar el producto
+                } else {
+                    producto.style.display = "none"; // Ocultar el producto
+                }
             }
         });
     });
@@ -210,21 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    // ===== Búsqueda en Tiempo Real (Opcional) =====
-    document.getElementById("buscador-input").addEventListener("input", function () {
-        const textoBusqueda = this.value.toLowerCase();
-        const productos = document.querySelectorAll(".producto");
-
-        productos.forEach((producto) => {
-            const nombreProducto = producto.querySelector("h3").textContent.toLowerCase();
-            if (nombreProducto.includes(textoBusqueda)) {
-                producto.style.display = "block";
-            } else {
-                producto.style.display = "none";
-            }
-        });
-    });
 });
 
 // ===== Funcionalidad del Menú Hamburguesa =====
