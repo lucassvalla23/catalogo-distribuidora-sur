@@ -13,15 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
         locale: "es-AR", // Configura el idioma
     });
 
-
-    // Función para guardar el carrito en localStorage
+    // Función para guardar el carrito en sessionStorage
     function guardarCarrito() {
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        sessionStorage.setItem("carrito", JSON.stringify(carrito));
     }
 
-    // Función para cargar el carrito desde localStorage
+    // Función para cargar el carrito desde sessionStorage
     function cargarCarrito() {
-        const carritoGuardado = localStorage.getItem("carrito");
+        const carritoGuardado = sessionStorage.getItem("carrito");
         if (carritoGuardado) {
             carrito.length = 0; // Vaciar el carrito actual
             carrito.push(...JSON.parse(carritoGuardado)); // Cargar el carrito guardado
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Agregar el producto al carrito
             carrito.push(producto);
 
-            // Actualizar el carrito y guardar en localStorage
+            // Actualizar el carrito y guardar en sessionStorage
             actualizarCarrito();
         });
     });
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botonVaciar.addEventListener("click", () => {
         carrito.length = 0; // Vaciar el carrito
         actualizarCarrito(); // Actualizar la visualización
-        localStorage.removeItem("carrito"); // Eliminar el carrito de localStorage
+        sessionStorage.removeItem("carrito"); // Eliminar el carrito de sessionStorage
     });
 
     // Función para actualizar el carrito
@@ -109,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             botonEliminar.addEventListener("click", () => {
                 carrito.splice(index, 1); // Eliminar el producto del carrito
                 actualizarCarrito(); // Actualizar la visualización del carrito
-                guardarCarrito(); // Guardar el carrito en localStorage
+                guardarCarrito(); // Guardar el carrito en sessionStorage
             });
 
             li.appendChild(botonEliminar);
@@ -121,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         totalCarrito.textContent = total.toFixed(2);
         contadorCarrito.textContent = carrito.length;
 
-        // Guardar el carrito en localStorage
+        // Guardar el carrito en sessionStorage
         guardarCarrito();
     }
 
