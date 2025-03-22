@@ -28,8 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Cargar el carrito al iniciar la página
-    cargarCarrito();
+    // Función para cargar y mostrar el carrito
+    function cargarYMostrarCarrito() {
+        cargarCarrito();
+    }
+
+    // Cargar el carrito al iniciar la página o al cambiar de página
+    window.addEventListener("pageshow", cargarYMostrarCarrito);
+    document.addEventListener("DOMContentLoaded", cargarYMostrarCarrito);
 
     // Mostrar carrito
     botonVerCarrito.addEventListener("click", (e) => {
@@ -125,8 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== Funcionalidad de pago con Mercado Pago =====
-
-    // Botón de pago
     const botonPagar = document.getElementById("boton-pagar");
 
     botonPagar.addEventListener("click", async () => {
