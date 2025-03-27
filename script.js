@@ -48,6 +48,37 @@ document.addEventListener("DOMContentLoaded", () => {
         divCarrito.classList.remove("mostrar"); // Quitar la clase "mostrar"
     });
 
+    // Función para obtener todas las variantes de un producto
+    function obtenerVariantes(productoDiv) {
+        const variantes = {};
+        // Busca tanto los selectores con clase 'opcion-tipo' como 'opcion-variante'
+        const selectsVariantes = productoDiv.querySelectorAll('.opcion-tipo, .opcion-variante');
+        
+        selectsVariantes.forEach(select => {
+            // Usa el atributo data-variante o el id del select como nombre de la variante
+            const nombreVariante = select.getAttribute('data-variante') || 
+                                 select.id.replace('tipo-', '').replace('tipo-', '') || 
+                                 'tipo';
+            const valorVariante = select.value;
+            variantes[nombreVariante] = valorVariante;
+        });
+        
+        return variantes;
+    }
+
+    // Función para formatear las variantes para mostrar en el carrito
+    function formatearVariantes(variantes) {
+        return Object.entries(variantes)
+            .map(([key, value]) => `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`)
+            .join(', ');
+    }
+
+    // Función para generar un ID único para el producto
+    function generarIdProducto(nombre, tipoCompra, variantes) {
+        const variantesStr = Object.values(variantes).join('-');
+        return `${nombre}-${tipoCompra}-${variantesStr}`.toLowerCase().replace(/\s+/g, '-');
+    }
+
     // Agregar productos al carrito
     document.querySelectorAll(".agregar-carrito").forEach((boton) => {
         boton.addEventListener("click", () => {
@@ -74,15 +105,30 @@ document.addEventListener("DOMContentLoaded", () => {
             const tipoCompra = opcionCompra.value; // "unidad" o "caja"
             const precio = parseFloat(opcionCompra.selectedOptions[0].getAttribute("data-precio"));
 
+            // Obtener todas las variantes del producto
+            const variantes = obtenerVariantes(productoDiv);
+
             // Crear el objeto del producto
             const producto = {
                 nombre,
                 tipoCompra,
                 precio,
+                variantes,
+                id: generarIdProducto(nombre, tipoCompra, variantes),
+                cantidad: 1
             };
 
-            // Agregar el producto al carrito
-            carrito.push(producto);
+            // Verificar si el producto ya está en el carrito
+            const productoExistente = carrito.find(item => item.id === producto.id);
+
+            if (productoExistente) {
+                // Si ya existe, incrementar la cantidad
+                productoExistente.cantidad += 1;
+                productoExistente.precio += producto.precio;
+            } else {
+                // Agregar el producto al carrito
+                carrito.push(producto);
+            }
 
             // Actualizar el carrito y guardar en sessionStorage
             actualizarCarrito();
@@ -105,7 +151,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const li = document.createElement("li");
 
             // Mostrar los detalles del producto en el carrito
-            li.textContent = `${producto.nombre} (${producto.tipoCompra}) - $${producto.precio}`;
+            let textoProducto = `${producto.nombre}`;
+            
+            // Agregar variantes si existen
+            if (Object.keys(producto.variantes).length > 0) {
+                textoProducto += ` (${formatearVariantes(producto.variantes)})`;
+            }
+            
+            // Agregar cantidad si es mayor que 1
+            if (producto.cantidad > 1) {
+                textoProducto += ` x${producto.cantidad}`;
+            }
+            
+            // Agregar tipo de compra y precio
+            textoProducto += ` - ${producto.tipoCompra} - $${producto.precio.toFixed(2)}`;
+            
+            li.textContent = textoProducto;
 
             // Botón para eliminar producto del carrito
             const botonEliminar = document.createElement("button");
@@ -124,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Actualizar el total y el contador del carrito
         totalCarrito.textContent = total.toFixed(2);
-        contadorCarrito.textContent = carrito.length;
+        contadorCarrito.textContent = carrito.reduce((sum, producto) => sum + producto.cantidad, 0);
 
         // Guardar el carrito en sessionStorage
         guardarCarrito();
