@@ -445,6 +445,7 @@ footer {
     margin-right: 5px;
 }
 
+/* ===== ESTILOS MODIFICADOS PARA PRODUCTOS ===== */
 /* Sección de productos */
 .productos {
     padding: 20px;
@@ -452,81 +453,75 @@ footer {
 }
 
 .lista-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+    gap: 12px;
+    padding: 12px;
 }
 
 .producto {
-    background-color: #eb1c24;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 250px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 12px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .producto:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .producto img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 .producto h3 {
-    font-size: 1.2em;
-    color: #FFD700;
-    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .opciones-compra {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .selector-tipo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.selector-tipo label {
-    font-size: 0.9em;
-    color: #FFD700;
-}
-
-.selector-tipo select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.9em;
+    display: none; /* Ocultamos en móviles para simplificar */
 }
 
 .opcion-compra {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.9em;
+    width: 100%;
+    padding: 6px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
 }
 
 .agregar-carrito {
-    background-color: #00a24e;
-    color: #fff;
+    background-color: #000;
+    color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
     cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -534,16 +529,68 @@ footer {
 }
 
 .agregar-carrito:hover {
-    background-color: #00a24e 
+    background-color: #333;
 }
 
-.agregar-carrito:disabled {
+.agregar-carrito i {
+    font-size: 14px;
+}
+
+/* Estilo para productos sin stock */
+.agregar-carrito[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-.agregar-carrito i {
-    font-size: 1.2em;
+/* ===== MEDIA QUERIES PARA TABLET Y DESKTOP ===== */
+
+@media (min-width: 768px) {
+    .lista-productos {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .producto {
+        padding: 15px;
+    }
+    
+    .producto h3 {
+        font-size: 15px;
+    }
+    
+    .selector-tipo {
+        display: flex; /* Mostramos el selector en desktop */
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .selector-tipo label {
+        font-size: 12px;
+        color: #555;
+    }
+    
+    .selector-tipo select {
+        padding: 4px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lista-productos {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en desktop */
+    }
+    
+    .producto h3 {
+        font-size: 16px;
+    }
+    
+    .agregar-carrito {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }
 
 /* ===== Estilos para la página de Contacto ===== */
