@@ -460,11 +460,16 @@ footer {
 }
 
 .producto {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Asegura que todas las cards tengan igual altura */
+    height: 100%;
 }
-
 
 .producto:hover {
     transform: translateY(-3px);
