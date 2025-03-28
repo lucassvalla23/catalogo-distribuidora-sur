@@ -1097,7 +1097,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFD700; /* Color amarillo */
+    background-color: #FFD700;
     color: #333;
     line-height: 1.6;
     display: flex;
@@ -1428,8 +1428,7 @@ footer {
     background-color: #128C7E;
 }
 
-/* ===== Estilos para productos ===== */
-/* Versión desktop (se mantiene igual) */
+/* ===== ESTILOS PARA PRODUCTOS (VERSIÓN DESKTOP) ===== */
 .productos {
     padding: 20px;
     text-align: center;
@@ -1532,66 +1531,141 @@ footer {
     font-size: 1.2em;
 }
 
-/* ===== Versión móvil para productos ===== */
+/* ===== VERSIÓN MÓVIL PARA PRODUCTOS ===== */
 @media (max-width: 768px) {
+    .productos {
+        padding: 10px;
+    }
+
     .lista-productos {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        padding: 15px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .producto {
-        width: 100%;
-        padding: 15px;
-        background-color: #eb1c24; /* Mantiene el color original */
+        background-color: #eb1c24;
+        border-radius: 10px;
+        padding: 12px;
+        margin: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: all 0.3s ease;
     }
 
     .producto img {
         width: 100%;
         height: auto;
-        max-height: 150px;
-        object-fit: contain; /* Muestra la imagen completa */
-    }
-
-    .producto h3 {
-        font-size: 14px;
-        color: #FFD700; /* Mantiene el color original */
-        margin: 10px 0;
-        min-height: auto;
-    }
-
-    .opciones-compra {
-        gap: 10px;
-    }
-
-    .selector-tipo {
-        display: flex; /* Mantenemos visible en móviles */
-        gap: 5px;
-    }
-
-    .selector-tipo label {
-        font-size: 12px;
-    }
-
-    .selector-tipo select {
-        padding: 3px;
-        font-size: 12px;
-    }
-
-    .opcion-compra {
-        font-size: 12px;
+        max-height: 120px;
+        object-fit: contain;
+        margin: 0 auto 10px auto;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
         padding: 5px;
     }
 
+    .producto h3 {
+        font-size: 13px;
+        color: #FFD700;
+        margin: 0 0 8px 0;
+        line-height: 1.3;
+        min-height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
+    .opciones-compra {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    .selector-tipo {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        margin-bottom: 5px;
+    }
+
+    .selector-tipo label {
+        font-size: 11px;
+        color: #FFD700;
+        text-align: center;
+    }
+
+    .selector-tipo select {
+        width: 100%;
+        padding: 4px;
+        font-size: 11px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+
+    .opcion-compra {
+        width: 100%;
+        padding: 5px;
+        font-size: 11px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
     .agregar-carrito {
+        background-color: #00a24e;
+        color: white;
+        border: none;
         padding: 8px;
+        border-radius: 4px;
         font-size: 12px;
-        background-color: #00a24e; /* Mantiene el color original */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: background-color 0.2s ease;
+    }
+
+    .agregar-carrito:hover {
+        background-color: #008f44;
+    }
+
+    .agregar-carrito i {
+        font-size: 12px;
     }
 }
 
-/* ===== Resto de tus estilos (se mantienen igual) ===== */
+/* ===== AJUSTES PARA TABLETS PEQUEÑAS ===== */
+@media (max-width: 600px) {
+    .lista-productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .producto {
+        padding: 10px;
+    }
+
+    .producto h3 {
+        font-size: 12px;
+    }
+}
+
+/* ===== AJUSTES PARA CELULARES PEQUEÑOS ===== */
+@media (max-width: 400px) {
+    .lista-productos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Resto de tus estilos existentes ===== */
 /* [Todos los demás estilos permanecen exactamente igual] */
 
 /* Animación del checkmark */
