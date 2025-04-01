@@ -1102,7 +1102,7 @@ footer {
 
     .lista-productos {
         display: grid;
-        grid-template-columns: repeat(2, minmax(140px, 160px)); /* Columnas de ancho fijo */
+        grid-template-columns: repeat(2, minmax(140px, 160px));
         gap: 12px;
         padding: 12px;
         width: auto;
@@ -1114,7 +1114,7 @@ footer {
         background-color: #eb1c24;
         border-radius: 10px;
         padding: 12px;
-        width: 100%; /* Ocupa todo el ancho de la celda grid */
+        width: 100%;
         box-sizing: border-box;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         display: flex;
@@ -1128,9 +1128,10 @@ footer {
         max-height: 100px;
         object-fit: contain;
         margin-bottom: 10px;
-        background-color: rgba(255,255,255,0.1);
+        /* ELIMINADO: background-color: rgba(255,255,255,0.1); */
         padding: 5px;
         border-radius: 5px;
+        background-color: transparent; /* Fondo transparente */
     }
 
     .producto h3 {
