@@ -1094,139 +1094,70 @@ footer {
 }
 /* ===== ESTILOS PARA DISPOSITIVOS MÓVILES (768px o menos) ===== */
 @media (max-width: 768px) {
-    /* Header reorganizado */
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 15px;
-        position: relative;
-    }
+    /* ... (mantener todos tus otros estilos mobile existentes) ... */
 
-    .logo-container {
-        position: static;
-        transform: none;
-        order: 2;
-        flex: 1;
-        text-align: center;
-    }
-
-    .logo-container img {
-        width: 40px;
-        height: auto;
-    }
-
-    .menu-hamburguesa {
-        display: block;
-        order: 1;
-        font-size: 20px;
-    }
-
-    .nav-carrito {
-        order: 3;
-    }
-
-    /* Menú desplegable */
-    .nav-principal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 70%;
-        height: 100vh;
-        background-color: #eb1c24;
-        flex-direction: column;
-        padding: 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-
-    .nav-principal.mostrar {
-        transform: translateX(0);
-    }
-
-    /* Buscador optimizado */
-    .buscador {
-        padding: 10px;
-    }
-
-    .buscador input[type="text"] {
-        width: 70%;
-        padding: 8px;
-    }
-
-    /* Filtros reorganizados */
-    .filtros {
-        padding: 15px 10px;
-    }
-
-    .botones-filtro {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #filtro-gomita, #filtro-regaliz {
-        width: 90%;
-        max-width: 250px;
-        margin: 5px 0;
-        padding: 12px;
-    }
-
-    /* Grid de productos optimizado */
+    /* MODIFICACIÓN PRINCIPAL: Grid de 2 columnas fijas */
     .lista-productos {
         display: grid;
-        grid-template-columns: repeat(2, minmax(140px, 1fr));
-        gap: 10px;
-        padding: 10px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+        gap: 12px;
+        padding: 12px;
         width: 100%;
         box-sizing: border-box;
     }
 
     .producto {
-        width: 100%;
+        width: 100%; /* Ocupa todo el ancho de la celda del grid */
+        margin: 0; /* Elimina márgenes que podrían afectar el layout */
         padding: 10px;
-        margin: 0;
         box-sizing: border-box;
     }
 
+    /* Ajustes para mantener la proporción de las imágenes */
     .producto img {
-        max-height: 100px;
+        width: 100%;
+        height: auto;
+        max-height: 120px;
         object-fit: contain;
     }
 
+    /* Textos más legibles */
     .producto h3 {
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.3;
-        margin: 5px 0;
+        margin: 8px 0;
+        height: 32px; /* Altura fija para uniformidad */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limita a 2 líneas */
+        -webkit-box-orient: vertical;
     }
 
+    /* Botones y selects adaptados */
     .opcion-compra, .agregar-carrito {
-        font-size: 11px;
-        padding: 8px;
-    }
-
-    /* Carrito optimizado */
-    .carrito {
-        width: 85%;
+        font-size: 12px;
+        padding: 8px 5px;
+        width: 100%;
     }
 }
 
 /* ===== AJUSTES PARA PANTALLAS MUY PEQUEÑAS (400px o menos) ===== */
 @media (max-width: 400px) {
+    /* Mantenemos 2 columnas incluso en pantallas muy pequeñas */
     .lista-productos {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 8px;
+        padding: 8px;
     }
 
-    .producto {
-        max-width: 180px;
-        margin: 0 auto;
+    .producto h3 {
+        font-size: 11px;
+        height: 28px;
     }
 
-    .botones-filtro {
-        flex-direction: column;
-    }
-
-    #filtro-gomita, #filtro-regaliz {
-        width: 100%;
+    .opcion-compra, .agregar-carrito {
+        font-size: 11px;
+        padding: 6px 4px;
     }
 }
 /* ===== ESTILOS PARA CATEGORÍAS EN MÓVILES ===== */
