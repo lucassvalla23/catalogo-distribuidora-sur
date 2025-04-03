@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masitas - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+     <!-- SDK de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav class="nav-principal" id="nav-principal">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+
+    <main>
+        <!-- Sección de Masitas -->
+        <section class="productos">
+            <div class="lista-productos">
+                <!-- Masita 1 -->
+                <div class="producto">
+                    <img src="img/masita 9 de oro clasicas.jpeg" alt="Masitas 9 De Oro Clásicas">
+                    <h3>Masitas 9 De Oro Clásicas</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra" data-stock="10">
+                            <option value="unidad" data-precio="700">Unidad - $700</option>
+                            <option value="caja" data-precio="9240">Caja (24 unidades) - $9,240</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Masitas 9 De Oro Clásicas">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 2 -->
+                <div class="producto">
+                    <img src="img/masita 9 de oro agridulce.jpeg" alt="Masitas 9 De Oro Agridulces">
+                    <h3>Masitas 9 De Oro Agridulce</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="700">Unidad - $700</option>
+                            <option value="caja" data-precio="7920">Caja (24 unidades) - $7,920</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Masitas 9 De Oro Agridulce">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 3 -->
+                <div class="producto">
+                    <img src="img/masita 9 de oro azucardas .jpeg" alt="Masitas 9 De Oro Azucardas">
+                    <h3>Masitas 9 De Oro Azucardas</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="700">Unidad - $700</option>
+                            <option value="caja" data-precio="7740">Caja (12 unidades) - $7,740</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Masitas 9 De Oro Azucardas">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                <!-- Masita 4 -->
+                <div class="producto">
+                    <img src="img/masita 9 de oro cara sucia.jpeg" alt="Masitas 9 De Oro Cara Sucia">
+                    <h3>Masitas 9 De Oro Cara Sucia</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="700">Unidad - $700</option>
+                            <option value="caja" data-precio="9720">Caja (12 unidades) - $9,720</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Masitas 9 De Oro Cara Sucia">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 5 -->
+                <div class="producto">
+                    <img src="img/masita ronda triangulos.jpeg" alt="Masitas Ronda Triángulos">
+                    <h3>Masitas Ronda Triángulos</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="800">Unidad - $800</option>
+                            <option value="caja" data-precio="6480">Caja (24 unidades) - $6,480</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Masitas Ronda Triángulos">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 6 -->
+                <div class="producto">
+                    <img src="img/masita ronda larguitas.jpeg" alt="Masitas Ronda Larguitas">
+                    <h3>Masitas Ronda Larguitas</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="800">Unidad - $800</option>
+                            <option value="caja" data-precio="17640">Caja (18 unidades) - $17,640</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Masitas Ronda Larguitas">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 7 -->
+                <div class="producto">
+                    <img src="img/obleas ilike dulce de leche.jpeg" alt="Oblea iLike Dulce De Leche">
+                    <h3>Oblea iLike Dulce De Leche</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="1500">Unidad - $1,500</option>
+                            <option value="caja" data-precio="6840">Caja (24 unidades) - $6,840</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Oblea iLike Dulce De Leche"
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Sin stock
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 8 -->
+                <div class="producto">
+                    <img src="img/obleas ilike chocolatejpeg.jpeg" alt="Oblea iLike Chocolate">
+                    <h3>Oblea iLike Chocolate</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="1500">Unidad - $1,500</option>
+                            <option value="caja" data-precio="6000">Caja (24 unidades) - $6,000</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Oblea iLike Chocolate"
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Sin stock
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Masita 9 -->
+                <div class="producto">
+                    <img src="img/obleas la oblita.jpeg" alt="Obleas La Oblita">
+                    <h3>Obleas La Oblita</h3>
+                    <div class="opciones-compra">
+                        <!-- Ejemplo para obleas -->
+                        <div class="selector-tipo">
+                            <label for="sabor-oblea">Sabor:</label>
+                            <select id="sabor-oblea" class="opcion-tipo" data-variante="sabor">
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Dulce De Leche">Dulce De Leche</option>
+                                <option value="Vainilla">Vainilla</option>
+                                <option value="Limón">Limón</option>
+                                <option value="Frutilla">Frutilla</option>
+                                <option value="Mix Frutal">Mix Frutal</option>
+                                <option value="Black">Black</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="3200">Unidad - $3,200</option>
+                            <option value="caja" data-precio="7164">Caja (36 unidades) - $7,164</option>
+                        </select>
+                        <button class="agregar-carrito" data-nombre="Obleas La Oblita">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                        <!-- Masita 10 -->
+                <div class="producto">
+                    <img src="img/masitas hipopó.jpeg" alt="Masitas Hipopó">
+                    <h3>Masitas Hipopó</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de tipo (negro o blanco) -->
+                        <div class="selector-tipo">
+                            <label for="sabor-masita">Sabor:</label>
+                            <select id="sabor-masita" class="opcion-tipo" data-variante="sabor">
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Vainilla">Vainilla</option>
+                                <option value="Frutilla">Frutilla</option>
+                            </select>
+                        </div>
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="590">Unidad - $590</option>
+                            <option value="caja" data-precio="6960">Caja (12 unidades) - $6,960</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Masitas Hipopó">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                 <!-- Masita 11 -->
+                 <div class="producto">
+                    <img src="img/Masita Pepas Malvi.jpeg" alt="Masitas Pepas Malvi Membrillo">
+                    <h3>Masitas Pepas Malvi Membrillo</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="450">Unidad - $450</option>
+                            <option value="caja" data-precio="6960">Caja (12 unidades) - $6,960</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Masitas Pepas Malvi Membrillo">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                <!-- Masita 12 -->
+                <div class="producto">
+                    <img src="img/Masitas Surtidas Edra.jpeg" alt="Masitas Surtidas Edra">
+                    <h3>Masitas Surtidas Edra</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="910">Unidad - $910</option>
+                            <option value="caja" data-precio="6960">Caja (12 unidades) - $6,960</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Masitas Surtidas Edra">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                <!-- Masita 13 -->
+                <div class="producto">
+                    <img src="img/masita recetas del campo membrillo.jpeg" alt="Masitas Pepas Membrillo Recetas Del Campo (350g)">
+                    <h3>Masitas Pepas Membrillo Recetas Del Campo (350g)</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="910">Unidad - $1,250</option>
+                            <option value="caja" data-precio="15000">Caja (12 unidades) - $15,000</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Masitas Pepas Membrillo Recetas Del Campo (350g)">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                <!-- Masita 14 -->
+                <div class="producto">
+                    <img src="img/masitas receta del campo dulce de leche.jpeg" alt="Masitas Pepas Dulce De Leche Recetas Del Campo (350g)">
+                    <h3>Masitas Pepas Dulce De Leche Recetas Del Campo (350g)</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="910">Unidad - $1,250</option>
+                            <option value="caja" data-precio="15000">Caja (12 unidades) - $15,000</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Masitas Pepas Dulce De Leche Recetas Del Campo (350g)">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+                <!-- Masita 15 -->
+                <div class="producto">
+                    <img src="img/masita receta del campo anillos limón.jpeg" alt="Masitas Anillos De Limón Recetas Del Campo (350g)">
+                    <h3>Masitas Anillos De Limón Recetas Del Campo (350g)</h3>
+                    <div class="opciones-compra">
+                        <!-- Selector de cantidad (unidad o caja) -->
+                        <select class="opcion-compra">
+                            <option value="unidad" data-precio="910">Unidad - $1,250</option>
+                            <option value="caja" data-precio="15000">Caja (12 unidades) - $15,000</option>
+                        </select>   
+                        <button class="agregar-carrito" data-nombre="Masitas Anillos De Limón Recetas Del Campo (350g)">
+                            <i class="fas fa-cart-plus"></i>
+                            <i class="fas fa-check"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+               <!-- Masita 16 -->
+               <div class="producto">
+                <img src="img/masita receta del campo polvorones naranja.jpeg" alt="Masitas Polvorones De Naranja Recetas Del Campo (350g)">
+                <h3>Masitas Polvorones De Naranja Recetas Del Campo (350g)</h3>
+                <div class="opciones-compra">
+                    <!-- Selector de cantidad (unidad o caja) -->
+                    <select class="opcion-compra">
+                        <option value="unidad" data-precio="910">Unidad - $1,250</option>
+                        <option value="caja" data-precio="15000">Caja (12 unidades) - $15,000</option>
+                    </select>   
+                    <button class="agregar-carrito" data-nombre="Masitas Polvorones De Naranja Recetas Del Campo (350g)">
+                        <i class="fas fa-cart-plus"></i>
+                        <i class="fas fa-check"></i>
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+                
+                
+        </section>
+    </main>
+     <!-- Botón flotante de WhatsApp -->
+     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <!-- Carrito de compras -->
+   <div id="carrito" class="carrito oculto">
+    <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0</span></p>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+    <div id="pago-mercado-pago" class="pago-mercado-pago">
+        <button id="boton-pagar">
+            <i class="fas fa-wallet"></i> Pagar con Mercado Pago
+        </button>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
