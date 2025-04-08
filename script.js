@@ -8,6 +8,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const divCarrito = document.getElementById("carrito");
     const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 
+
+        // ===== Funcionalidad de WhatsApp =====
+        const botonWhatsApp = document.getElementById("enviar-whatsapp");
+    
+        botonWhatsApp.addEventListener("click", () => {
+            if (carrito.length === 0) {
+                alert("El carrito está vacío. Agrega productos antes de enviar.");
+                return;
+            }
+            
+            // Formatear el mensaje para WhatsApp
+            let mensaje = "Hola, me gustaría hacer el siguiente pedido:\n\n";
+            
+            carrito.forEach((producto) => {
+                mensaje += `- ${producto.nombre}`;
+                
+                // Agregar variantes si existen
+                if (Object.keys(producto.variantes).length > 0) {
+                    mensaje += ` (${formatearVariantes(producto.variantes)})`;
+                }
+                
+                // Agregar cantidad y precio
+                mensaje += ` - ${producto.cantidad} ${producto.tipoCompra}(s)`;
+                mensaje += ` - $${producto.precio.toFixed(2)}\n`;
+            });
+            
+            mensaje += `\nTotal: $${calcularTotalCarrito().toFixed(2)}\n`;
+            mensaje += "Por favor confírmame disponibilidad y total final.\n¡Gracias!";
+            
+            // Codificar el mensaje para URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // Número de teléfono del mayorista (reemplaza con el número real)
+            const telefonoMayorista = "5493465658349"; // Ejemplo: 549 para código de país Argentina + número
+            
+            // Abrir WhatsApp con el mensaje predefinido
+            window.open(`https://wa.me/${telefonoMayorista}?text=${mensajeCodificado}`, '_blank');
+        });
+
     // ===== Configuración de Mercado Pago =====
     const mp = new MercadoPago("APP_USR-c636cfaa-8a31-4584-892d-32d5ca3a2028", {
         locale: "es-AR", // Configura el idioma

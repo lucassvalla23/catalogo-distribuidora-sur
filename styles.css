@@ -1244,3 +1244,37 @@ footer {
         height: 60px;
     }
 }
+/* Reemplaza el estilo existente del botón de WhatsApp con este */
+.boton-whatsapp {
+    background-color: #25D366; /* Verde característico de WhatsApp */
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Mismo padding que el botón de Mercado Pago */
+    font-size: 16px; /* Mismo tamaño de fuente */
+    font-weight: bold; /* Misma negrita */
+    border-radius: 5px; /* Mismo radio de borde */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Ocupa todo el ancho disponible */
+    width: 100%; /* Mismo ancho que el botón de Mercado Pago */
+    text-align: center; /* Texto centrado */
+    margin-top: 20px; /* Mismo margen superior */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar contenido horizontalmente */
+    gap: 10px; /* Espacio entre ícono y texto */
+}
+
+.boton-whatsapp:hover {
+    background-color: #128C7E; /* Verde más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.boton-whatsapp:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+.boton-whatsapp i {
+    font-size: 1.2em; /* Tamaño del ícono similar al de Mercado Pago */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
