@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Arroz - Distribuidora Sur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/icon" href="img/favicon.ico">
+    <!-- SDK de Mercado Pago -->
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav class="nav-principal" id="nav-principal">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Inicio
+            </a>
+            <a href="contacto.html">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Distribuidora Sur">
+            </a>
+        </div>
+        <nav class="nav-carrito">
+            <a href="#" id="ver-carrito">
+                <i class="fas fa-shopping-cart"></i>  (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+    </header>
+
+     <!-- Buscador de productos -->
+<div class="buscador">
+    <input type="text" id="buscador-input" placeholder="Buscar productos..." />
+    <button id="boton-buscar">
+        <i class="fas fa-search"></i> <!-- Ícono de lupa -->
+    </button>
+</div>
+        <main>
+            <!-- Sección de Arroz -->
+            <section class="productos">
+                <div class="lista-productos">
+                    <!-- Arroz 1 -->
+                    <div class="producto">
+                        <img src="img/arroz apóstoles.jpeg" alt="Arroz Apóstoles Largo Fino">
+                        <h3>Arroz Apóstoles Largo Fino</h3>
+                        <div class="opciones-compra">
+                            <select class="opcion-compra" data-stock="10"> <!-- Stock disponible -->
+                                <option value="unidad" data-precio="810">Unidad - $810</option>
+                                <option value="pack" data-precio="8100">Pack (10 Unidades) - $8,100</option>
+                            </select>
+                            <button class="agregar-carrito" data-nombre="Arroz Apóstoles Largo Fino">
+                                <i class="fas fa-cart-plus"></i> <!-- Ícono del carrito -->
+                                <i class="fas fa-check"></i> <!-- Ícono de checkmark -->
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>  
+                    
+                </section>
+             </main>
+              <!-- Botón flotante de WhatsApp -->
+     <a href="https://wa.me/message/YOTUSNYKZOMVI1" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Carrito de compras -->
+    <div id="carrito" class="carrito oculto">
+        <button id="cerrar-carrito" class="cerrar-carrito">×</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+        <div id="pago-mercado-pago" class="pago-mercado-pago">
+            <button id="boton-pagar">
+                <i class="fas fa-wallet"></i> Pagar con Mercado Pago
+            </button>
+            <button id="enviar-whatsapp" class="boton-whatsapp">
+                <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Distribuidora Sur. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
